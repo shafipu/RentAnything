@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RentAdminPannel</RootNamespace>
     <AssemblyName>RentAdminPannel</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -84,11 +85,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -233,6 +230,175 @@
     <Content Include="Content\Admin\assets\js\perfect-scrollbar.jquery.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\User\assets\css\animate.css" />
+    <Content Include="Content\User\assets\css\bootstrap-select.min.css" />
+    <Content Include="Content\User\assets\css\bootstrap-theme.css" />
+    <Content Include="Content\User\assets\css\font-awesome.min.css" />
+    <Content Include="Content\User\assets\css\fontello.css" />
+    <Content Include="Content\User\assets\css\icheck.min_all.css" />
+    <Content Include="Content\User\assets\css\ion.rangeSlider.css" />
+    <Content Include="Content\User\assets\css\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Content\User\assets\css\ion.rangeSlider.skinNice.css" />
+    <Content Include="Content\User\assets\css\jquery.slitslider.css" />
+    <Content Include="Content\User\assets\css\lightslider.min.css" />
+    <Content Include="Content\User\assets\css\normalize.css" />
+    <Content Include="Content\User\assets\css\owl.carousel.css" />
+    <Content Include="Content\User\assets\css\owl.theme.css" />
+    <Content Include="Content\User\assets\css\owl.transitions.css" />
+    <Content Include="Content\User\assets\css\price-range.css" />
+    <Content Include="Content\User\assets\css\responsive.css" />
+    <Content Include="Content\User\assets\css\slider.css" />
+    <Content Include="Content\User\assets\css\style.css" />
+    <Content Include="Content\User\assets\css\styleNoJS.css" />
+    <Content Include="Content\User\assets\css\wizard.css" />
+    <Content Include="Content\User\assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\User\assets\fonts\fontawesome-webfont_1.svg" />
+    <Content Include="Content\User\assets\fonts\fontello\fontello.svg" />
+    <Content Include="Content\User\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\User\assets\fonts\icon-7-stroke\css\helper.css" />
+    <Content Include="Content\User\assets\fonts\icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="Content\User\assets\fonts\icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Content\User\assets\img\ads.jpg" />
+    <Content Include="Content\User\assets\img\arrow-left.svg" />
+    <Content Include="Content\User\assets\img\arrow-right.svg" />
+    <Content Include="Content\User\assets\img\arrows-small.png" />
+    <Content Include="Content\User\assets\img\arrows.png" />
+    <Content Include="Content\User\assets\img\bg-footer.jpg" />
+    <Content Include="Content\User\assets\img\blog1.jpg" />
+    <Content Include="Content\User\assets\img\blog2.jpg" />
+    <Content Include="Content\User\assets\img\chevron-down.png" />
+    <Content Include="Content\User\assets\img\client-face1.png" />
+    <Content Include="Content\User\assets\img\client-face2.png" />
+    <Content Include="Content\User\assets\img\controls.png" />
+    <Content Include="Content\User\assets\img\default-property.jpg" />
+    <Content Include="Content\User\assets\img\demo\bg.jpg" />
+    <Content Include="Content\User\assets\img\demo\bg2.jpg" />
+    <Content Include="Content\User\assets\img\demo\bg3.jpg" />
+    <Content Include="Content\User\assets\img\demo\bg4.jpg" />
+    <Content Include="Content\User\assets\img\demo\i1.jpg" />
+    <Content Include="Content\User\assets\img\demo\i2.jpg" />
+    <Content Include="Content\User\assets\img\demo\i3.jpg" />
+    <Content Include="Content\User\assets\img\demo\i4.jpg" />
+    <Content Include="Content\User\assets\img\demo\property-1.jpg" />
+    <Content Include="Content\User\assets\img\demo\property-2.jpg" />
+    <Content Include="Content\User\assets\img\demo\property-3.jpg" />
+    <Content Include="Content\User\assets\img\demo\property-4.jpg" />
+    <Content Include="Content\User\assets\img\demo\property-5.jpg" />
+    <Content Include="Content\User\assets\img\demo\property-6.jpg" />
+    <Content Include="Content\User\assets\img\demo\small-proerty-2.jpg" />
+    <Content Include="Content\User\assets\img\demo\small-property-1.jpg" />
+    <Content Include="Content\User\assets\img\demo\small-property-2.jpg" />
+    <Content Include="Content\User\assets\img\demo\small-property-3.jpg" />
+    <Content Include="Content\User\assets\img\dsdsds33 - Copy.png" />
+    <Content Include="Content\User\assets\img\footer-logo-2.png" />
+    <Content Include="Content\User\assets\img\footer-logo.png" />
+    <Content Include="Content\User\assets\img\icon-shearch.png" />
+    <Content Include="Content\User\assets\img\icon\bed-orange.png" />
+    <Content Include="Content\User\assets\img\icon\bed.png" />
+    <Content Include="Content\User\assets\img\icon\cars-orange.png" />
+    <Content Include="Content\User\assets\img\icon\cars.png" />
+    <Content Include="Content\User\assets\img\icon\cart.png" />
+    <Content Include="Content\User\assets\img\icon\os-orange.png" />
+    <Content Include="Content\User\assets\img\icon\os.png" />
+    <Content Include="Content\User\assets\img\icon\picine-orange.png" />
+    <Content Include="Content\User\assets\img\icon\picine.png" />
+    <Content Include="Content\User\assets\img\icon\rent-orange.png" />
+    <Content Include="Content\User\assets\img\icon\room-orange.png" />
+    <Content Include="Content\User\assets\img\icon\room.png" />
+    <Content Include="Content\User\assets\img\icon\sale-orange.png" />
+    <Content Include="Content\User\assets\img\icon\shawer-orange.png" />
+    <Content Include="Content\User\assets\img\icon\shawer.png" />
+    <Content Include="Content\User\assets\img\logo.png" />
+    <Content Include="Content\User\assets\img\page-header.jpg" />
+    <Content Include="Content\User\assets\img\preloader.gif" />
+    <Content Include="Content\User\assets\img\pro-ads.jpg" />
+    <Content Include="Content\User\assets\img\property-1\property1.jpg" />
+    <Content Include="Content\User\assets\img\property-1\property2.jpg" />
+    <Content Include="Content\User\assets\img\property-1\property3.jpg" />
+    <Content Include="Content\User\assets\img\property-1\property4.jpg" />
+    <Content Include="Content\User\assets\img\property-video.jpg" />
+    <Content Include="Content\User\assets\img\similar\property-1.jpg" />
+    <Content Include="Content\User\assets\img\similar\property-2.jpg" />
+    <Content Include="Content\User\assets\img\similar\property-3.jpg" />
+    <Content Include="Content\User\assets\img\skin\aero%402x.png" />
+    <Content Include="Content\User\assets\img\skin\aero.png" />
+    <Content Include="Content\User\assets\img\skin\blue%402x.png" />
+    <Content Include="Content\User\assets\img\skin\blue.png" />
+    <Content Include="Content\User\assets\img\skin\green%402x.png" />
+    <Content Include="Content\User\assets\img\skin\green.png" />
+    <Content Include="Content\User\assets\img\skin\grey%402x.png" />
+    <Content Include="Content\User\assets\img\skin\grey.png" />
+    <Content Include="Content\User\assets\img\skin\orange%402x.png" />
+    <Content Include="Content\User\assets\img\skin\orange.png" />
+    <Content Include="Content\User\assets\img\skin\pink%402x.png" />
+    <Content Include="Content\User\assets\img\skin\pink.png" />
+    <Content Include="Content\User\assets\img\skin\purple%402x.png" />
+    <Content Include="Content\User\assets\img\skin\purple.png" />
+    <Content Include="Content\User\assets\img\skin\red%402x.png" />
+    <Content Include="Content\User\assets\img\skin\red.png" />
+    <Content Include="Content\User\assets\img\skin\square%402x.png" />
+    <Content Include="Content\User\assets\img\skin\square.png" />
+    <Content Include="Content\User\assets\img\skin\yellow%402x.png" />
+    <Content Include="Content\User\assets\img\skin\yellow.png" />
+    <Content Include="Content\User\assets\img\skin\yellow_1.png" />
+    <Content Include="Content\User\assets\img\slide-2.jpg" />
+    <Content Include="Content\User\assets\img\slide1\slide1.jpg" />
+    <Content Include="Content\User\assets\img\slide1\slider-image-1.jpg" />
+    <Content Include="Content\User\assets\img\slide1\slider-image-2.jpg" />
+    <Content Include="Content\User\assets\img\slide1\slider-image-4.jpg" />
+    <Content Include="Content\User\assets\img\slide2\1.jpg" />
+    <Content Include="Content\User\assets\img\social-big\delicious_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\delicious_white.png" />
+    <Content Include="Content\User\assets\img\social-big\digg_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\digg_white.png" />
+    <Content Include="Content\User\assets\img\social-big\dribbble_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\dribbble_white.png" />
+    <Content Include="Content\User\assets\img\social-big\facebook_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\facebook_white.png" />
+    <Content Include="Content\User\assets\img\social-big\linkedin_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\linkedin_white.png" />
+    <Content Include="Content\User\assets\img\social-big\rss_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\rss_white.png" />
+    <Content Include="Content\User\assets\img\social-big\tumblr_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\tumblr_white.png" />
+    <Content Include="Content\User\assets\img\social-big\twitter_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\twitter_white.png" />
+    <Content Include="Content\User\assets\img\social-big\vimeo_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\vimeo_white.png" />
+    <Content Include="Content\User\assets\img\social-big\youtube_grey.png" />
+    <Content Include="Content\User\assets\img\social-big\youtube_white.png" />
+    <Content Include="Content\User\assets\img\welcome-bg.png" />
+    <Content Include="Content\User\assets\js\bootstrap-hover-dropdown.js" />
+    <Content Include="Content\User\assets\js\bootstrap-select.min.js" />
+    <Content Include="Content\User\assets\js\bootstrap-slider.js" />
+    <Content Include="Content\User\assets\js\bootstrap-wizard.min.js" />
+    <Content Include="Content\User\assets\js\bootstrap.min.js" />
+    <Content Include="Content\User\assets\js\easypiechart.min.js" />
+    <Content Include="Content\User\assets\js\gmaps.init.js" />
+    <Content Include="Content\User\assets\js\gmaps.js" />
+    <Content Include="Content\User\assets\js\icheck.min.js" />
+    <Content Include="Content\User\assets\js\jquery-1.10.2.min.js" />
+    <Content Include="Content\User\assets\js\jquery.ba-cond.min.js" />
+    <Content Include="Content\User\assets\js\jquery.bootstrap.wizard.js" />
+    <Content Include="Content\User\assets\js\jquery.easypiechart.min.js" />
+    <Content Include="Content\User\assets\js\jquery.slitslider.js" />
+    <Content Include="Content\User\assets\js\jquery.validate.min.js" />
+    <Content Include="Content\User\assets\js\lightslider.min.js" />
+    <Content Include="Content\User\assets\js\main.js" />
+    <Content Include="Content\User\assets\js\modernizr-2.6.2.min.js" />
+    <Content Include="Content\User\assets\js\modernizr.custom.79639.js" />
+    <Content Include="Content\User\assets\js\owl.carousel.min.js" />
+    <Content Include="Content\User\assets\js\plugins.js" />
+    <Content Include="Content\User\assets\js\price-range.js" />
+    <Content Include="Content\User\assets\js\wizard.js" />
+    <Content Include="Content\User\assets\js\wow.js" />
+    <Content Include="Content\User\assets\js\wow.min.js" />
+    <Content Include="Content\User\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\User\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\User\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\User\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\User\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\User\bootstrap\js\npm.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -279,6 +445,29 @@
     <Content Include="Content\Admin\assets\sass\md\mixins\_chartist.scss" />
     <Content Include="Content\Admin\assets\sass\md\mixins\_transparency.scss" />
     <Content Include="Content\Admin\assets\sass\md\mixins\_vendor-prefixes.scss" />
+    <Content Include="Content\User\assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\User\assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\User\assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\User\assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\User\assets\fonts\fontawesome-webfont_1.eot" />
+    <Content Include="Content\User\assets\fonts\fontawesome-webfont_1.ttf" />
+    <Content Include="Content\User\assets\fonts\fontawesome-webfont_1.woff" />
+    <Content Include="Content\User\assets\fonts\FontAwesome.otf" />
+    <Content Include="Content\User\assets\fonts\FontAwesome_1.otf" />
+    <Content Include="Content\User\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\User\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\User\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\User\assets\fonts\fontello\fontello.eot" />
+    <Content Include="Content\User\assets\fonts\fontello\fontello.ttf" />
+    <Content Include="Content\User\assets\fonts\fontello\fontello.woff" />
+    <Content Include="Content\User\assets\fonts\icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Content\User\assets\fonts\icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Content\User\assets\fonts\icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Content\User\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\User\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\User\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\User\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\User\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -329,7 +518,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

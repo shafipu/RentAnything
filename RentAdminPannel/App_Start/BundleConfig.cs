@@ -49,7 +49,43 @@ namespace RentAdminPannel
                       "~/Content/Admin/assets/css/material-dashboard.css"));
             //Admin Dashboard Styles Ends
             //--------------------------------------------------------------------
-
+            //User CSS Design Starts here -HARLEEN KAUR
+            bundles.Add(new StyleBundle("~/Content/User_css").Include(
+                     "~/Content/User/assets/css/normalize.css",
+                     "~/Content/User/assets/css/font-awesome.min.css",
+                     "~/Content/User/assets/css/rating.css",
+                     "~/Content/User/assets/css/fontello.css",
+                     "~/Content/User/assets/fonts/icon-7-stroke/css/pe-icon-7-stroke.css",
+                     "~/Content/User/assets/fonts/icon-7-stroke/css/helper.css",
+                     "~/Content/User/assets/css/animate.css",
+                     "~/Content/User/assets/css/bootstrap-select.min.css",
+                     "~/Content/User/bootstrap/css/bootstrap.min.css",
+                     "~/Content/User/assets/css/icheck.min_all.css",
+                     "~/Content/User/assets/css/price-range.css",
+                     "~/Content/User/assets/css/owl.carousel.css",
+                     "~/Content/User/assets/css/owl.theme.css",
+                     "~/Content/User/assets/css/owl.transitions.css",
+                     "~/Content/User/assets/css/style.css",
+                     "~/Content/User/assets/css/responsive.css"
+                   ));
+            //User Design  Ends
+            //--------------------------------------------------------------------
+            //User Scripts starts here
+            bundles.Add(new ScriptBundle("~/bundles/User_js").Include(
+                     "~/Content/User/assets/js/modernizr-2.6.2.min.js",
+                     "~/Content/User/assets/js/jquery-1.10.2.min.js",
+                     "~/Content/User/bootstrap/js/bootstrap.min.js",
+                     "~/Content/User/assets/js/bootstrap-select.min.js",
+                     "~/Content/User/assets/js/bootstrap-hover-dropdown.js",
+                      "~/Content/User/assets/js/easypiechart.min.js",
+                     "~/Content/User/assets/js/jquery.easypiechart.min.js",
+                     "~/Content/User/assets/js/owl.carousel.min.js",
+                     "~/Content/User/assets/js/wow.js",
+                      "~/Content/User/assets/js/icheck.min.js",
+                       "~/Content/User/assets/js/price-range.js",
+                        "~/Content/User/assets/js/main.js"
+                       ));
+            //User  srcipts Ends
 
         }
     }
