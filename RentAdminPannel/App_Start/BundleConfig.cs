@@ -9,8 +9,7 @@ namespace RentAdminPannel
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js",
-                        "~/assets/js/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -24,21 +23,34 @@ namespace RentAdminPannel
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap_material").Include(
-                      "~/assets/js/bootstrap.min.js",
-                      "~/assets/jsbootstrap-notify.js",
-                      "~/assets/js/arrive.min.js",
-                      "~/assets/js/chartist.min.js",
-                      "~/assets/js/demo.js",
-                      "~/assets/js/material-dashboard.js",
-                      "~/assets/js/material.min.js",
-                      "~/assets/js/perfect-scrollbar.jquery.min.js"));
-
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/assets/css/material-dashboard.css",
-                      "~/assets/css/demo.css",
                       "~/Content/site.css"));
+
+            //Admin Dashboard srcipts Starts
+            //--------------------------------------------------------------------
+            bundles.Add(new ScriptBundle("~/bundles/Admin_js").Include(
+                      "~/Content/Admin/assets/js/jquery-3.2.1.min.js",
+                      "~/Content/Admin/assets/js/bootstrap.min.js",
+                      "~/Content/Admin/assets/js/material.min.js",
+                      "~/Content/Admin/assets/js/chartist.min.js",
+                      "~/Content/Admin/assets/js/arrive.min.js",
+                      "~/Content/Admin/assets/js/perfect-scrollbar.jquery.min.js",
+                      "~/Content/Admin/assets/js/bootstrap-notify.js",
+                      "~/Content/Admin/assets/js/demo.js",
+                      "~/Content/Admin/assets/js/material-dashboard.js"));
+            //Admin Dashboard srcipts Ends
+            //--------------------------------------------------------------------
+
+            //Admin Dashboard Styles Starts
+            //--------------------------------------------------------------------
+            bundles.Add(new StyleBundle("~/Content/Admin_css").Include(
+                      "~/Content/Admin/assets/css/bootstrap.min.css",
+                      "~/Content/Admin/assets/css/material-dashboard.css"));
+            //Admin Dashboard Styles Ends
+            //--------------------------------------------------------------------
+
+
         }
     }
 }
