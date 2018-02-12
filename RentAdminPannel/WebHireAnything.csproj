@@ -233,8 +233,6 @@
     <Content Include="Content\Admin\assets\js\perfect-scrollbar.jquery.min.js" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\demo.css" />
-    <Content Include="Content\material-dashboard.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
