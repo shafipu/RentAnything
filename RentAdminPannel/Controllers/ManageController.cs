@@ -10,7 +10,7 @@ using RentAdminPannel.Models;
 
 namespace RentAdminPannel.Controllers
 {
-    [Authorize]
+  /*  [Authorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -385,5 +385,5 @@ namespace RentAdminPannel.Controllers
         }
 
 #endregion
-    }
+    }*/
 }
