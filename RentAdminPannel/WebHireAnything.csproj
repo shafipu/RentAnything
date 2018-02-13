@@ -522,6 +522,12 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Profile.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Admin\categoryManagement.cshtml" />
+    <Content Include="Views\Admin\userManagement.cshtml" />
+    <Content Include="Views\Admin\adManagement.cshtml" />
+    <Content Include="Views\Admin\locationManagement.cshtml" />
+    <Content Include="Views\Admin\packageScheme.cshtml" />
+    <Content Include="Views\Admin\notification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
