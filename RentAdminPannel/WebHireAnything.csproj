@@ -394,9 +394,11 @@
     <Content Include="Content\User\assets\js\owl.carousel.min.js" />
     <Content Include="Content\User\assets\js\plugins.js" />
     <Content Include="Content\User\assets\js\price-range.js" />
+    <Content Include="Content\User\assets\js\slider.js" />
     <Content Include="Content\User\assets\js\wizard.js" />
     <Content Include="Content\User\assets\js\wow.js" />
     <Content Include="Content\User\assets\js\wow.min.js" />
+    <Content Include="Content\User\assets\video\v1.mp4" />
     <Content Include="Content\User\bootstrap\css\bootstrap.css" />
     <Content Include="Content\User\bootstrap\css\bootstrap.min.css" />
     <Content Include="Content\User\bootstrap\fonts\glyphicons-halflings-regular.svg" />
@@ -522,6 +524,9 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Admin\Profile.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\Item_display.cshtml" />
+    <Content Include="Views\Home\Cart.cshtml" />
+    <Content Include="Views\Home\Description.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
