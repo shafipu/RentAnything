@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse yamm" id="navigation">
                 <div class="button navbar-right">
                     <a href="@Url.Action("Login", "Account")" class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.4s">  Login</></a>
-                    <button class="navbar-btn nav-button wow fadeInRight" onclick=" window.open('submit-property.html')" data-wow-delay="0.5s">Post an Ad</button>
+                   <a href="@Url.Action("adPosting", "Home")" class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.5s">Post an Ad</a>
                 </div>
                 <ul class="main-nav nav navbar-nav navbar-right">
                     <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="@Url.Action("index", "Home")">Home</a></li>
@@ -116,7 +116,7 @@
                                             <h5>User account</h5>
                                             <ul>
                                                 <li><a href="@Url.Action("Register", "Account")">Register / login</a>   </li>
-                                                <li><a href="submit-property.html">Submit property</a>  </li>
+                                                <li><a href="@Url.Action("adPosting", "Home")">Submit property</a>  </li>
 
                                             </ul>
                                         </div>
