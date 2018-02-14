@@ -67,6 +67,7 @@ namespace RentAdminPannel
                      "~/Content/User/assets/css/owl.transitions.css",
                      "~/Content/User/assets/css/style.css",
                      "~/Content/User/assets/css/responsive.css",
+                     "~/Content/User/assets/css/wizard.css",
                       "~/Content/User/assets/css/lightslider.min.css"
                    ));
             //User Design  Ends
@@ -85,6 +86,9 @@ namespace RentAdminPannel
                       "~/Content/User/assets/js/icheck.min.js",
                        "~/Content/User/assets/js/price-range.js",
                         "~/Content/User/assets/js/main.js",
+                        "~/Content/User/assets/js/jquery.bootstrap.wizard.js",
+                        "~/Content/User/assets/js/jquery.validate.min.js",
+                        "~/Content/User/assets/js/wizard.js",
                          "~/Content/User/assets/js/lightslider.min.js"
 
                        ));

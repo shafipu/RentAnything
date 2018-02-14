@@ -1,0 +1,286 @@
+﻿
+@{
+    ViewBag.Title = "adPosting";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="page-head">
+    <div class="container">
+        <div class="row">
+            <div class="page-head-content">
+                <h1 class="page-title">Submit new product</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End page header -->
+<!-- property area -->
+<div class="content-area submit-property" style="background-color: #FCFCFC;">
+    &nbsp;
+    <div class="container">
+        <div class="clearfix">
+            <div class="wizard-container">
+
+                <div class="wizard-card ct-wizard-orange" id="wizardProperty">
+                    <form action="" method="">
+                        <div class="wizard-header">
+                            <h3>
+                                <b>Submit</b> YOUR PRODUCT DESCRIPTION
+                                <br>
+                                <br />
+
+                                <!--  <small>Lorem ipsum dolor sit amet, consectetur adipisicing.</small> -->
+                            </h3>
+                        </div>
+
+                        <ul>
+                            <li><a href="#step1" data-toggle="tab">Step 1 </a></li>
+                            <li><a href="#step2" data-toggle="tab">Step 2 </a></li>
+                            <li><a href="#step3" data-toggle="tab">Step 3 </a></li>
+                            <li><a href="#step4" data-toggle="tab">Finished </a></li>
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div class="tab-pane" id="step1">
+                                <div class="row p-b-15  ">
+                                    <h4 class="info-text"> Let's start with the basic information (with validation)</h4>
+                                    <div class="col-sm-4 col-sm-offset-1">
+                                        <div class="picture-container">
+                                            <div class="picture">
+                                                <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title="" />
+                                                <input type="file" id="wizard-picture">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+
+                                        <div class="form-group">
+                                            <label>Product Name :</label>
+                                            <input name="phone" type="text" class="form-control">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Product category <small>(required)</small></label>
+                                            <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select category">
+                                                <option>Packages</option>
+                                                <option>Electronic</option>
+                                                <option>Funiture</option>
+                                                <option>Automobiles</option>
+                                                <option>Appliances</option>
+                                                <option>Computers</option>
+                                                <option>Others</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Product sub-category<small>(required)</small></label>
+                                            <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select sub-category">
+                                                <option>Laptops</option>
+                                                <option>Earphones</option>
+                                                <option>Headphones</option>
+                                                <option>Baby Poducts</option>
+                                                <option>A.C</option>
+                                                <option>Cooler</option>
+                                                <option>Others</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  End step 1 -->
+
+                            <div class="tab-pane" id="step2">
+                                <h4 class="info-text"> How much your Product is Useful ? </h4>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label>Product Description :</label>
+                                                <textarea name="discrition" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 padding-top-15">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Available State :</label>
+                                                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                    <option>Seoul</option>
+                                                    <option>Paris</option>
+                                                    <option>Casablanca</option>
+                                                    <option>Tokyo</option>
+                                                    s
+                                                    <option>Masrraekch</option>
+                                                    <option>kyoto , shibua</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Available City :</label>
+                                                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                    <option>New york, CA</option>
+                                                    <option>Paris</option>
+                                                    <option>Casablanca</option>
+                                                    <option>Tokyo</option>
+                                                    <option>Marraekch</option>
+                                                    <option>kyoto , shibua</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Pincode :</label>
+                                                <input name="pincode" type="text" class="form-control" placeholder="226004">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>Property Statue  :</label>
+                                                <select id="basic" class="selectpicker show-tick form-control">
+                                                    <option> -Status- </option>
+                                                    <option>New</option>
+                                                    <option>used</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 padding-top-15">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label>Daily Rent :</label>
+                                                <!-- <input name="daily" type="text" class="form-control" placeholder="">-->
+                                                <input type="checkbox" id="yourBox" onchange="document.getElementById('yourText').disabled = !this.checked" />
+                                                <input name="daily " type="text" class="form-control" id="yourText" disabled />
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+
+                                            <div class="form-group">
+                                                <label>Monthly Rent :</label>
+                                                <!--   <input name="monthly" type="text" class="form-control" placeholder="">-->
+                                                <input type="checkbox" id="yourBox" onchange="document.getElementById('yourText').disabled = !this.checked" />
+                                                <input name="daily " type="text" class="form-control" id="yourText" disabled />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+
+                                            <div class="form-group">
+                                                <label for="property-geo">Product geo (m2) :</label>
+                                                <input type="text" class="span2" value="" data-slider-min="0"
+                                                       data-slider-max="600" data-slider-step="5"
+                                                       data-slider-value="[50,450]" id="property-geo"><br />
+                                                <b class="pull-left color">40m</b>
+                                                <b class="pull-right color">12000m</b>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12 padding-top-15">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="make">Make Of Product :</label>
+                                                <input class="form-control" name="make" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="model">Model Of Product :</label>
+                                                <input class="form-control" name="model" type="text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+                            <!-- End step 2 -->
+
+                            <div class="tab-pane" id="step3">
+                                <h4 class="info-text">Give us somme images and videos ? </h4>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="property-video">Product Video :</label>
+                                            <input class="form-control" placeholder="http://www.youtube.com, http://vimeo.com" name="property_video"
+                                                   type="text" id="property-images">
+                                            <br />
+                                            <br />
+                                            <center>
+                                                <p>One image is mandatory, others are optional .</p>
+                                            </center>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="property-images">Choose Images :</label>
+                                            <input class="form-control" name="property_image" type="file">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input class="form-control" name="property_image" type="file">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <input class="form-control" name="property_image" type="file">
+                                        </div>
+                                        <div class="form-group">
+                                            <input class="form-control" name="property_image" type="file">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  End step 3 -->
+
+
+                            <div class="tab-pane" id="step4">
+                                <h4 class="info-text"> Finished and submit </h4>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="">
+                                            <p>
+                                                <label><strong>Terms and Conditions</strong></label>
+                                                By accessing or using  GARO ESTATE services, such as
+                                                posting your property advertisement with your personal
+                                                information on our website you agree to the
+                                                collection, use and disclosure of your personal information
+                                                in the legal proper manner
+                                            </p>
+
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" /> <strong>Accept termes and conditions.</strong>
+                                                </label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--  End step 4 -->
+
+                        </div>
+
+                        <div class="wizard-footer">
+                            <div class="pull-right">
+                                <input type='button' class='btn btn-next btn-primary' name='next' value='Next' />
+                                <input type='button' class='btn btn-finish btn-primary ' name='finish' value='Finish' />
+                            </div>
+
+                            <div class="pull-left">
+                                <input type='button' class='btn btn-previous btn-default' name='previous' value='Previous' />
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+                <!-- End submit form -->
+            </div>
+        </div>
+    </div>
+</div>
