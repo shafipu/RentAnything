@@ -24,7 +24,7 @@ namespace RentAdminPannel.Controllers
       }
 }   
 }
-
+//controller testing
 /*[Authorize]
 public class AccountController : Controller
 {
