@@ -13,55 +13,189 @@
 </div>
 <!-- End page header -->
 <!-- register-area -->
-<div class="register-area" style="background-color: rgb(249, 249, 249);">
-    <div class="container">
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <div class="box-for overflow">
-                <div class="col-md-12 col-xs-12 register-blocks">
-                    <h2>New account : </h2>
-                    <form action="" method="post">
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" required>
+
+<!-- End page header -->
+<!-- property area -->
+<div class="content-area submit-property" ">
+    &nbsp;
+    <div class="container" style="box-shadow:2px 2px 3px #E0E0E0">
+        <div class="clearfix">
+            <div class="wizard-container">
+
+                <div class="wizard-card ct-wizard-orange" id="wizardProperty">
+                    <form action="" method="">
+                        <div class="wizard-header">
+                            <h3>
+                                <b>Register Youself</b> <br>
+
+                            </h3>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" class="form-control" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="confirm_password">Confirm Password</label>
-                            <input type="password" class="form-control" id="confirm_password" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="gender">Gender:</label>
-                            <input type="radio" name="gender" value="male" checked> Male
-                            <input type="radio" name="gender" value="female">Female
-                            <input type="radio" name="gender" value="others">Others
-                        </div>
-                        <div class="form-group">
-                            <label for="dob">Date of Birth</label>
-                            <input class="form-control" type="date" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone_number">Contact Number</label>
-                            <input class="form-control" maxlength="10" placeholder="number" name="contact" required>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-default">Register</button>
-                        </div>
+
+                        <ul>
+                            <li><a href="#step1" data-toggle="tab">Step 1 </a></li>
+                            <li><a href="#step2" data-toggle="tab">Step 2 </a></li>
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div class="tab-pane" id="step1">
+                                <div class="row ">
+                                    <h4 class="info-text"> Let's start with the basic information</h4>
+                                    <div class="col-sm-4 col-sm-offset-1">
+                                        <div class="picture-container">
+                                            <div class="picture">
+                                                <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title="" />
+                                                <input type="file" id="wizard-picture">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="name">First Name</label>
+                                            <input type="text" class="form-control" id="firstname" class="form-control" placeholder="First Name...">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="name">Last Name</label>
+                                            <input type="text" class="form-control" id="firstname" class="form-control" placeholder="Last Name...">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="phone_number">Contact Number</label>
+                                            <input class="form-control" maxlength="10" placeholder="number" name="contact">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--  End step 1 -->
+                            <div class="tab-pane" id="step2">
+                                <h4 class="info-text"> How much your Property is Beautiful ? </h4>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Email:</label>
+                                                <input type="text" class="form-control" id="email" class="form-control" placeholder="Email here...">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Password:</label>
+                                                <input type="password" class="form-control" id="email" class="form-control" placeholder="Password...">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Confirm Password:</label>
+                                                <input type="password" class="form-control" id="email" class="form-control" placeholder="Retype password...">
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 padding-top-15">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="gender">Gender:</label>&nbsp;
+                                                <div class="form-group">
+                                                    <input type="radio" class="form-control" name="gender" value="male" checked> Male 
+                                                    <input type="radio" class="form-control" name="gender" value="female">Female
+                                                    <input type="radio" class="form-control" name="gender" value="others">Others
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="dob">Date of Birth</label>
+                                                <input class="form-control" type="date" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>State :</label>
+                                                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                    <option>Seoul</option>
+                                                    <option>Paris</option>
+                                                    <option>Casablanca</option>
+                                                    <option>Tokyo</option>
+                                                    <option>Marraekch</option>
+                                                    <option>kyoto , shibua</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label>City :</label>
+                                                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                    <option>New york, CA</option>
+                                                    <option>Paris</option>
+                                                    <option>Casablanca</option>
+                                                    <option>Tokyo</option>
+                                                    <option>Marraekch</option>
+                                                    <option>kyoto , shibua</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label for="dob">Zip Code</label>
+                                                <input class="form-control" type="text" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-12">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Security Question:</label>
+                                                <select id="securityquestion" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Question">
+                                                    <option>New york, CA</option>
+                                                    <option>Paris</option>
+                                                    <option>Casablanca</option>
+                                                    <option>Tokyo</option>
+                                                    <option>Marraekch</option>
+                                                    <option>kyoto , shibua</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label>Answer:</label>
+                                                <input type="text" class="form-control" id="email" class="form-control" placeholder="Answer...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                </div>
+                            </div>
+
+                            <!-- End step 2 -->
+                            <div class="wizard-footer">
+                                <div class="pull-right">
+                                    <input type='button' class='btn btn-next btn-primary' name='next' value='Next' />
+                                    <input type='button' class='btn btn-finish btn-primary ' name='finish' value='Submit' />
+                                </div>
+
+                                <div class="pull-left">
+                                    <input type='button' class='btn btn-previous btn-default' name='previous' value='Previous' />
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
                     </form>
                 </div>
+                <!-- End submit form -->
             </div>
         </div>
     </div>
 </div>
-
-
 
 
 
