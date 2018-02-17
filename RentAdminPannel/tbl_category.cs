@@ -21,7 +21,7 @@ namespace RentAdminPannel
         {
             this.tbl_product = new HashSet<tbl_product>();
             this.tbl_subcategory = new HashSet<tbl_subcategory>();
-            entryby = "shafi";
+            
 
 
         }

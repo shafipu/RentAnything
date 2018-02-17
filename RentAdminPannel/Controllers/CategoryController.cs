@@ -51,6 +51,7 @@ namespace RentAdminPannel
         {
             if (ModelState.IsValid)
             {
+                tbl_category.entryby = "shafi";
                 db.tbl_category.Add(tbl_category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
