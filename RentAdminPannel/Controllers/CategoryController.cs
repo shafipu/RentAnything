@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using RentAdminPannel.Models;
+using System.Web.Script.Serialization;
 
 namespace RentAdminPannel
 {
@@ -18,6 +19,11 @@ namespace RentAdminPannel
         public ActionResult Index()
         {
             return View(db.tbl_category.ToList());
+        }
+        
+        public string listOfAllCategory()
+        {
+            return (new JavaScriptSerializer().Serialize(db.tbl_category.ToList()));
         }
 
         // GET: Category/Details/5
@@ -52,6 +58,8 @@ namespace RentAdminPannel
             if (ModelState.IsValid)
             {
                 tbl_category.entryby = "shafi";
+                tbl_category.entrydate = DateTime.Now;
+                tbl_category.isactive = 1;
                 db.tbl_category.Add(tbl_category);
                 db.SaveChanges();
                 return RedirectToAction("Index");
