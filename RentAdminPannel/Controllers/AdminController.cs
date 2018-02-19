@@ -19,36 +19,6 @@ namespace RentAdminPannel.Controllers
             return View();
         }
 
-        public ActionResult categoryManagement()
-        {
-            return View();
-        }
-
-        public ActionResult userManagement()
-        {
-            return View();
-        }
-
-        public ActionResult adManagement()
-        {
-            return View();
-        }
-
-        public ActionResult locationManagement()
-        {
-            return View();
-        }
-
-        public ActionResult packageScheme()
-        {
-            return View();
-        }
-
-        public ActionResult notification()
-        {
-            return View();
-        }
-
         
     }
 }

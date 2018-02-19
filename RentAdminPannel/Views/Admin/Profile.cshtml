@@ -18,73 +18,117 @@
                             <div class="card-content">
                                 <form>
                                     <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Lovely Infotech (disabled)</label>
-                                                <input type="text" class="form-control" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Username</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Email address</label>
-                                                <input type="email" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group label-floating">
-                                                <label class="control-label">Fist Name</label>
-                                                <input type="text" class="form-control">
+                                                <label class="control-label">First Name</label>
+                                                <input required text="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group label-floating">
                                                 <label class="control-label">Last Name</label>
-                                                <input type="text" class="form-control">
+                                                <input required type="text" class="form-control">
                                             </div>
                                         </div>
+                                       
                                     </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label">Email address</label>
+                                            <input required type="email" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="radio">
+                                               
+                                                    <label class="control-label">Gender</label>
+                                                <label>
+                                                   <input type="radio"value="male">male</label>
+                                                 <label> <input type="radio" value="female">female</label>
+                                                    </div>
+
+                                            </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Date Of Birth</label>
+                                                <input required type="date" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group label-floating">
-                                                <label class="control-label">Adress</label>
-                                                <input type="text" class="form-control">
+                                                <label class="control-label">Address</label>
+                                                <input required text="text" class="form-control">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group label-floating">
-                                                <label class="control-label">City</label>
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group label-floating">
                                                 <label class="control-label">Country</label>
-                                                <input type="text" class="form-control">
+                                                <input required type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group label-floating">
-                                                <label class="control-label">Postal Code</label>
-                                                <input type="text" class="form-control">
+                                                <label class="control-label">State</label>
+                                                <input required type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">city</label>
+                                                <input required type="text" class="form-control">
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Postal Code</label>
+                                                <input required type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Mobile No.</label>
+                                                <input required type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Old Password</label>
+                                                <input required type="password" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">New Password</label>
+                                                <input required type="password" class="form-control">
+                                            </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Confirm Password</label>
+                                                    <input required type="password" class="form-control">
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>About Me</label>
                                                 <div class="form-group label-floating">
-                                                    <label class="control-label"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
+                                                    <label class="control-label">Designation.</label>
                                                     <textarea class="form-control" rows="5"></textarea>
                                                 </div>
                                             </div>
@@ -100,7 +144,7 @@
                         <div class="card card-profile">
                             <div class="card-avatar">
                                 <a href="#pablo">
-                                    <img class="img" src="../assets/img/faces/marc.jpg" />
+                                    <img class="img" src="~/Content/Admin/assets/img/faces/marc.jpg" />
                                 </a>
                             </div>
                             <div class="content">
@@ -145,12 +189,26 @@
                 <p class="copyright pull-right">
                     &copy;
                     <script>
-                            document.write(new Date().getFullYear())
+                        document.write(new Date().getFullYear());
+                        $("input:checkbox").on('click', function () {
+                            // in the handler, 'this' refers to the box clicked on
+                            var $box = $(this);
+                            if ($box.is(":checked")) {
+                                // the name of the box is retrieved using the .attr() method
+                                // as it is assumed and expected to be immutable
+                                var group = "input:checkbox[name='" + $box.attr("name") + "']";
+                                // the checked state of the group/box on the other hand will change
+                                // and the current value is retrieved using .prop() method
+                                $(group).prop("checked", false);
+                                $box.prop("checked", true);
+                            } else {
+                                $box.prop("checked", false);
+                            }
+                        });
                     </script>
                     <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
                 </p>
             </div>
         </footer>
-    </div>
-</div>
+ 
 

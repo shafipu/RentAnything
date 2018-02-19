@@ -1,0 +1,136 @@
+﻿@model RentAdminPannel.tbl_category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Category and SubCategory</h2>
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="purple">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <span class="nav-tabs-title">Category : </span>
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                            <li class="active">
+                                <a href="#new" data-toggle="tab">
+                                    <i class="material-icons">open_in_new</i> Create New Category
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#list" data-toggle="tab">
+                                    <i class="material-icons">list</i> Category List
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#edit" data-toggle="tab">
+                                    <i class="material-icons">build</i> Edit Category
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#Delete" data-toggle="tab">
+                                    <i class="material-icons">delete</i> Delete Category
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="new">
+                        <div class="col-md-12 container-fluid" >
+                            
+                                <div class="card-content">
+                                    @using (Html.BeginForm())
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Category Name</label>
+                                                    <input type="text" id="categoryname" required name="categoryname" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Category Description</label>
+                                                    <input type="text" id="categorydescription" required name="categorydescription" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary pull-right">Create</button>
+                                        <div class="clearfix"></div>
+                                    }
+                                </div>
+                            
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="list">
+                        
+                    </div>
+                    <div class="tab-pane" id="edit">
+                        
+                    </div>
+                    <div class="tab-pane" id="Delete">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <input type="button" value="save data" onclick="save()" />
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $.get('/Category/listOfAllCategory', function (data) {
+        data = JSON.parse(data);
+        var tblrow = '';
+        var tblfoot='</table>'
+        var tblhead = '<table class="table"><tr><th>Category name</th><th>Category description</th><th>Enrty By<th></th></th></tr>'
+        for (i = 0; i < data.length; i++) {
+            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a onclick="edit(' + data[i].categoryid + ')">Edit</a></td></tr>';
+        }
+
+        $("#list").html(tblhead+tblrow+tblfoot);
+    });
+
+    function edit(i) {
+        //window.location.href = "/Category/Edit/" + i;
+
+        $("li.active").removeClass('active');
+        $("a[href='#list']").attr('aria-expanded', 'false');
+        $("#list").removeClass('active');
+
+        $("a[href='#edit']").parent().removeClass().addClass("active");
+        $("a[href='#edit']").attr('aria-expanded', 'true');
+        $("#edit").addClass('active');
+
+    }
+
+    function save() {
+        var j = { "categoryname": "Hemant", "categorydescription": "Prajapati" };
+        $.post('/Category/Create', j, function (data) {
+            console.log(data);
+        });
+    }
+
+</script>

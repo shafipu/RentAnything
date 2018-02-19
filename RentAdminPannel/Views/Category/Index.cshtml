@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RentAdminPannel.tbl_category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.categoryname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.categorydescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entryby)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entrydate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isactive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoryname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.categorydescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entryby)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entrydate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isactive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.categoryid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.categoryid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.categoryid })
+        </td>
+    </tr>
+}
+
+</table>

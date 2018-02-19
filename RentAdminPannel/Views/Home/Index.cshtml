@@ -16,6 +16,8 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 col-sm-12">
 
+                <div id="test"></div>
+
                 <div class="search-form wow pulse" data-wow-delay="0.8s">
 
                     <form action="" class=" form-inline">
@@ -459,6 +461,18 @@
     </div>
 </div>
 
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $.get('/Home/CallMe', function (data) {
+        data = JSON.parse(data);
+        var h = '';
+        for (i = 0; i < data.length; i++) {
+            //alert(data[i].Code + ' --> ' + data[i].Name);
+            h+='<div>'+data[i].Code+'</div>'
+        }
 
+        $("#test").html(h);
+    });
+</script>
 
 
