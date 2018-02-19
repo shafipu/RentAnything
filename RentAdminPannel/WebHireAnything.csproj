@@ -385,6 +385,7 @@
     <Content Include="Content\User\assets\js\jquery.ba-cond.min.js" />
     <Content Include="Content\User\assets\js\jquery.bootstrap.wizard.js" />
     <Content Include="Content\User\assets\js\jquery.easypiechart.min.js" />
+    <Content Include="Content\User\assets\js\jquery.js" />
     <Content Include="Content\User\assets\js\jquery.slitslider.js" />
     <Content Include="Content\User\assets\js\jquery.validate.min.js" />
     <Content Include="Content\User\assets\js\lightslider.min.js" />
@@ -395,6 +396,7 @@
     <Content Include="Content\User\assets\js\plugins.js" />
     <Content Include="Content\User\assets\js\price-range.js" />
     <Content Include="Content\User\assets\js\slider.js" />
+    <Content Include="Content\User\assets\js\state.js" />
     <Content Include="Content\User\assets\js\wizard.js" />
     <Content Include="Content\User\assets\js\wow.js" />
     <Content Include="Content\User\assets\js\wow.min.js" />
