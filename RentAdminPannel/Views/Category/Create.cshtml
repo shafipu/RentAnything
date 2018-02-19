@@ -84,7 +84,7 @@
                         </div>
                     </div>
                     <div class="tab-pane" id="list">
-                        <div id="test"></div>
+                        
                     </div>
                     <div class="tab-pane" id="edit">
                         
@@ -96,7 +96,7 @@
             </div>
         </div>
     </div>
-   
+   <input type="button" value="save data" onclick="save()" />
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -107,9 +107,30 @@
         var tblfoot='</table>'
         var tblhead = '<table class="table"><tr><th>Category name</th><th>Category description</th><th>Enrty By<th></th></th></tr>'
         for (i = 0; i < data.length; i++) {
-            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><td>&#64;Html.ActionLink("Edit", "Edit", new { id= ' + data[i].categoryid + ' }) |&#64;Html.ActionLink("Details", "Details", new { id=' + data[i].categoryid + ' }) |&#64;Html.ActionLink("Delete", "Delete", new { id=' + data[i].categoryid + ' })</td></td></tr>'
+            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a onclick="edit(' + data[i].categoryid + ')">Edit</a></td></tr>';
         }
 
         $("#list").html(tblhead+tblrow+tblfoot);
     });
+
+    function edit(i) {
+        //window.location.href = "/Category/Edit/" + i;
+
+        $("li.active").removeClass('active');
+        $("a[href='#list']").attr('aria-expanded', 'false');
+        $("#list").removeClass('active');
+
+        $("a[href='#edit']").parent().removeClass().addClass("active");
+        $("a[href='#edit']").attr('aria-expanded', 'true');
+        $("#edit").addClass('active');
+
+    }
+
+    function save() {
+        var j = { "categoryname": "Hemant", "categorydescription": "Prajapati" };
+        $.post('/Category/Create', j, function (data) {
+            console.log(data);
+        });
+    }
+
 </script>
