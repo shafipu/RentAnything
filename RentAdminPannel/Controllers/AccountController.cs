@@ -26,18 +26,7 @@ namespace RentAdminPannel.Controllers
             return View(usermodel);
         }
         //POST 
-        [HttpPost]
-        public ActionResult Register(tbl_usermaster usermodel)
-        {
-            using (HireModel dbModel = new HireModel())
-            {
-                dbModel.tbl_usermaster.Add(usermodel);
-                dbModel.SaveChanges();
-            }
-            ModelState.Clear();
-            ViewBag.SuccessMessage = "Registration Done!";
-            return View("AddorEdit", new tbl_usermaster());
-        }
+        
     }   
 }
 //controller testing

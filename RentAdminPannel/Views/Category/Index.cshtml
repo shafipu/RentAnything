@@ -5,54 +5,281 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Category Management</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.categoryname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.categorydescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.entryby)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.entrydate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.isactive)
-        </th>
-        <th></th>
-    </tr>
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="purple">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <span class="nav-tabs-title">Category : </span>
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                            <li class="active">
+                                <a href="#list" data-toggle="tab">
+                                    <i class="material-icons">list</i> Category List
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#new" data-toggle="tab">
+                                    <i class="material-icons">open_in_new</i> Create New Category
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            
+                            <li class="">
+                                <a href="#edit" data-toggle="tab">
+                                    <i class="material-icons">build</i> Edit Category
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#Delete" data-toggle="tab">
+                                    <i class="material-icons">delete</i> Delete Category
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="tab-content">
+                    
+                    <div class="tab-pane active" id="list">
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.categoryname)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.categorydescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.entryby)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.entrydate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.isactive)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.categoryid }) |
-            @Html.ActionLink("Details", "Details", new { id=item.categoryid }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.categoryid })
-        </td>
-    </tr>
-}
+                    </div>
+                    <div class="tab-pane" id="new">
+                        <div class="col-md-12 container-fluid">
 
-</table>
+                            <div class="card-content">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Category Name</label>
+                                                <input type="text" id="categoryname" required name="categoryname" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Category Description</label>
+                                                <input type="text" id="categorydescription" required name="categorydescription" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        <button type="submit" id="btnPost" class="btn btn-primary pull-right">Create</button>
+                                        <div class="clearfix"></div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="edit">
+                        <div class="col-md-12 container-fluid">
+
+                            <div class="card-content">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <input type="hidden" id="categoryid" value="" class="categoryid" />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Category Name</label>
+                                                <input type="text" id="categoryname" required name="categoryname" class="form-control categoryname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Category Description</label>
+                                                <input type="text" id="categorydescription" required name="categorydescription" class="form-control categorydescription">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                        <button type="submit" class="btn btn-primary pull-right" id="btnEdit">Update</button>
+                                        <div class="clearfix"></div>
+                                }
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="Delete">
+
+                        <div>
+                            
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    <h6 style="font-weight:bold">Name :</h6>
+                                </dt>
+
+                                <dd>
+                                    <div id="Delete-categoryname"></div>
+                                    
+                                </dd>
+
+                                <dt>
+                                    <h6 style="font-weight:bold">Description :</h6>
+                                </dt>
+
+                                <dd>
+                                    <div id="Delete-Description"></div>
+                                </dd>
+                            </dl>
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" required id="categoryid"  class="categoryid-delete" />
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Delete" id="btnDelete" class="btn btn-primary" /> 
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $.get('/Category/listOfAllCategory', function (data) {
+        data = JSON.parse(data);
+        var tblrow = '';
+        var tblfoot='</table>'
+        var tblhead = '<table class="table"><tr><th>Category name</th><th>Category description</th><th>Enrty By<th></th></th></tr>'
+        for (i = 0; i < data.length; i++) {
+            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
+        }
+
+        $("#list").html(tblhead+tblrow+tblfoot);
+    });
+
+    function edit(i) {
+
+        $("li.active").removeClass('active');
+        $("a[href='#list']").attr('aria-expanded', 'false');
+        $("#list").removeClass('active');
+
+        $("a[href='#edit']").parent().removeClass().addClass("active");
+        $("a[href='#edit']").attr('aria-expanded', 'true');
+        $("#edit").addClass('active');
+
+
+        $.get('/Category/listOfAllCategory', function (data) {
+            data = JSON.parse(data);
+
+            $(".categoryid").val(data[i].categoryid);
+
+            $(".categoryname").parent().removeClass().addClass("form-group label-floating");
+            $(".categoryname").val(data[i].categoryname);
+
+            $(".categorydescription").parent().removeClass().addClass("form-group label-floating");
+            $(".categorydescription").val(data[i].categorydescription);
+        });
+
+    }
+
+    function deletion(i) {
+        //window.location.href = "/Category/Edit/" + i;
+        $("li.active").removeClass('active');
+        $("a[href='#list']").attr('aria-expanded', 'false');
+        $("#list").removeClass('active');
+
+        $("a[href='#Delete']").parent().removeClass().addClass("active");
+        $("a[href='#Delete']").attr('aria-expanded', 'true');
+        $("#Delete").addClass('active');
+
+
+        $.get('/Category/listOfAllCategory', function (data) {
+            data = JSON.parse(data);
+            $(".categoryid-delete").val(data[i].categoryid);
+            $("#Delete-categoryname").html('<h6>' + data[i].categoryname + '</h6>');
+            $("#Delete-Description").html('<h6>' + data[i].categorydescription + '</h6>');
+
+        });
+
+    }
+    
+
+
+    $(function () {
+        $("#btnPost").click(function () {
+            var category = new Object();
+            category.categoryname = $('#categoryname').val();
+            category.categorydescription = $('#categorydescription').val();
+            if (category != null) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Category/CreateCategoryAjax",
+                    data: JSON.stringify(category),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                });
+                alert("Category added succesfully");
+            }
+        });
+    });
+
+    $(function () {
+        $("#btnEdit").click(function () {
+            var category = new Object();
+            category.categoryid = $('.categoryid').val();
+            category.categoryname = $('.categoryname').val();
+            category.categorydescription = $('.categorydescription').val();
+            if (category != null) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Category/editCategoryAjax",
+                    data: JSON.stringify(category),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json"
+                });
+                alert("Category Updated succesfully");
+            }
+        });
+    });
+
+    $(function () {
+        $("#btnDelete").click(function () {
+            var category = new Object();
+            category.categoryid = $('.categoryid-delete').val();
+            if (category != null) {
+                $.ajax({
+                    type: "POST",
+                    url: "/Category/deleteCategoryAjax",
+                    data: JSON.stringify(category),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response != null) {
+                            //alert("Category Deleted succesfully");
+                        }
+                        else {
+                            //alert("Something went wrong");
+                        }
+                     }
+
+                });
+                
+            }
+        });
+    });
+
+    
+
+</script>
