@@ -92,9 +92,28 @@ namespace RentAdminPannel
         {
             if (ModelState.IsValid)
             {
+                tbl_category.entryby = "shafi";
+                tbl_category.entrydate = DateTime.Now;
+                tbl_category.isactive = 1;
                 db.Entry(tbl_category).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
+            }
+            return View(tbl_category);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Update([Bind(Include = "categoryid,categoryname,categorydescription")] tbl_category tbl_category)
+        {
+            if (ModelState.IsValid)
+            {
+                tbl_category.entryby = "shafi";
+                tbl_category.entrydate = DateTime.Now;
+                tbl_category.isactive = 1;
+                db.Entry(tbl_category).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Create/#list");
             }
             return View(tbl_category);
         }
