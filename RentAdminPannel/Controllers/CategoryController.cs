@@ -68,6 +68,56 @@ namespace RentAdminPannel
             return View(tbl_category);
         }
 
+        [HttpPost]
+        public JsonResult CreateCategoryAjax(tbl_category cat)
+        {
+            tbl_category category = new tbl_category
+            {
+                categoryname = cat.categoryname,
+                categorydescription = cat.categorydescription,
+                entryby = "shafi",
+                entrydate = DateTime.Now,
+                isactive = 1
+            };
+            db.tbl_category.Add(category);
+            db.SaveChanges();
+            return Json(category, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult editCategoryAjax(tbl_category cat)
+        {
+            tbl_category category = new tbl_category
+            {
+                categoryid=cat.categoryid,
+                categoryname = cat.categoryname,
+                categorydescription = cat.categorydescription,
+                entryby = "shafi",
+                entrydate = DateTime.Now,
+                isactive = 1
+            };
+            db.Entry(category).State = EntityState.Modified;
+            db.SaveChanges();
+            return Json(category, JsonRequestBehavior.AllowGet);
+        }
+        
+
+        [HttpPost]
+        public JsonResult deleteCategoryAjax(tbl_category cat)
+        {
+            tbl_category category = new tbl_category
+            {
+                categoryid = cat.categoryid,
+            };
+            tbl_category tbl_category = db.tbl_category.Find(category.categoryid);
+            if (tbl_category == null)
+            {
+                return Json(category, JsonRequestBehavior.AllowGet);
+            }
+            db.tbl_category.Remove(tbl_category);
+            db.SaveChanges();
+            return Json(category, JsonRequestBehavior.AllowGet);
+        }
         // GET: Category/Edit/5
         public ActionResult Edit(long? id)
         {
@@ -92,6 +142,9 @@ namespace RentAdminPannel
         {
             if (ModelState.IsValid)
             {
+                tbl_category.entryby = "shafi";
+                tbl_category.entrydate = DateTime.Now;
+                tbl_category.isactive = 1;
                 db.Entry(tbl_category).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -99,6 +152,7 @@ namespace RentAdminPannel
             return View(tbl_category);
         }
 
+        
         // GET: Category/Delete/5
         public ActionResult Delete(long? id)
         {

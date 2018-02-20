@@ -11,8 +11,7 @@ namespace RentAdminPannel
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class tbl_rollmaster
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,7 +19,7 @@ namespace RentAdminPannel
         {
             this.tbl_usermaster = new HashSet<tbl_usermaster>();
         }
-        [Key]
+    
         public long rollid { get; set; }
         public string rollname { get; set; }
         public string rolldescription { get; set; }
