@@ -30,30 +30,32 @@
                                                 <input required type="text" class="form-control">
                                             </div>
                                         </div>
-                                       
+
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group label-floating">
-                                            <label class="control-label">Email address</label>
+                                            <label class="control-label">Email Address</label>
                                             <input required type="email" class="form-control">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-6">
 
-                                            <div class="radio">
-                                               
-                                                    <label class="control-label">Gender</label>
-                                                <label>
-                                                   <input type="radio"value="male">male</label>
-                                                 <label> <input type="radio" value="female">female</label>
-                                                    </div>
+                                            <div class="form-group ">
+                                                <label>Gender</label>
+                                                <div class="radio">
 
+                                                    <label>
+                                                        <input type="radio" value="male" name="gender"> male
+                                                    </label>
+                                                    <label> <input type="radio" value="female" name="gender"> female</label>
+                                                </div>
                                             </div>
+                                        </div>
                                         <div class="col-md-6">
                                             <div class="form-group label-floating">
                                                 <label class="control-label">Date Of Birth</label>
-                                                <input required type="date" class="form-control">
+                                                <input required type="text" class="form-control">
                                             </div>
                                         </div>
 
@@ -102,18 +104,31 @@
                                         </div>
 
                                     </div>
+
+
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Old Password</label>
-                                                <input required type="password" class="form-control">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Want to change Password??</label>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">New Password</label>
-                                                <input required type="password" class="form-control">
+
+                                        <div class="row">
+
+                                          
+                                            <div class="col-md-4">
+
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Old Password</label>
+                                                    <input type="password" class="form-control" disabled>
+                                                </div>
                                             </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">New Password</label>
+                                                    <input required type="password" class="form-control">
+                                                </div>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="form-group label-floating">
@@ -123,19 +138,19 @@
                                             </div>
 
                                         </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>About Me</label>
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Designation.</label>
-                                                    <textarea class="form-control" rows="5"></textarea>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label>About Me</label>
+                                                    <div class="form-group label-floating">
+                                                        <label class="control-label">Designation.</label>
+                                                        <textarea class="form-control" rows="5"></textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
-                                    <div class="clearfix"></div>
+                                        <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                                        <div class="clearfix"></div>
                                 </form>
                             </div>
                         </div>
@@ -190,21 +205,7 @@
                     &copy;
                     <script>
                         document.write(new Date().getFullYear());
-                        $("input:checkbox").on('click', function () {
-                            // in the handler, 'this' refers to the box clicked on
-                            var $box = $(this);
-                            if ($box.is(":checked")) {
-                                // the name of the box is retrieved using the .attr() method
-                                // as it is assumed and expected to be immutable
-                                var group = "input:checkbox[name='" + $box.attr("name") + "']";
-                                // the checked state of the group/box on the other hand will change
-                                // and the current value is retrieved using .prop() method
-                                $(group).prop("checked", false);
-                                $box.prop("checked", true);
-                            } else {
-                                $box.prop("checked", false);
-                            }
-                        });
+                       
                     </script>
                     <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
                 </p>

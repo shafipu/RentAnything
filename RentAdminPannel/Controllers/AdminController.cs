@@ -16,7 +16,11 @@ namespace RentAdminPannel.Controllers
 
         public new ActionResult Profile()
         {
-            return View();
+            tbl_usermaster admin = new tbl_usermaster();
+            
+
+
+            return View(admin);
         }
 
         

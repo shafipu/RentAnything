@@ -60,7 +60,9 @@ namespace RentAdminPannel.Controllers
             ModelState.Clear();
             ViewBag.SuccessMessage = "Registration Done!";
             return View("AddorEdit", new tbl_usermaster());
-        }*/
+        }
+    }   
+}
 //controller testing
 /*[Authorize]
 public class AccountController : Controller
