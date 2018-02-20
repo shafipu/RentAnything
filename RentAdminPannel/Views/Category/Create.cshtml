@@ -87,16 +87,76 @@
                         
                     </div>
                     <div class="tab-pane" id="edit">
-                        
+                        <div class="col-md-12 container-fluid">
+                            @Html.HiddenFor(model => model.categoryid, new { htmlAttributes = new { @class = "categoryid" } })
+                            <div class="card-content">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Category Name</label>
+                                                <input type="text" id="categoryname" required name="categoryname" class="form-control categoryname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group label-floating">
+                                                    <label class="control-label">Category Description</label>
+                                                    <input type="text" id="categorydescription" required name="categorydescription" class="form-control categorydescription">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary pull-right" onclick="update()">Update</button>
+                                        <div class="clearfix"></div>
+                                }
+                            </div>
+
+                        </div>
+
                     </div>
                     <div class="tab-pane" id="Delete">
+
+                        <div>
+                            <h4>tbl_category</h4>
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                   <h6 style="font-weight:bold" >Name :</h6>
+                                </dt>
+
+                                <dd>
+                                    <div id="Delete-categoryname"></div>
+                                </dd>
+
+                                <dt>
+                                    <h6 style="font-weight:bold">Description :</h6>
+                                </dt>
+
+                                <dd>
+                                    <div id="Delete-Description"></div>
+                                </dd>
+                            </dl>
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                                    @Html.ActionLink("Back to List", "Index")
+                                </div>
+                            }
+                        </div>
 
                     </div>
                 </div>
             </div>
         </div>
     </div>
-   <input type="button" value="save data" onclick="save()" />
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -107,15 +167,14 @@
         var tblfoot='</table>'
         var tblhead = '<table class="table"><tr><th>Category name</th><th>Category description</th><th>Enrty By<th></th></th></tr>'
         for (i = 0; i < data.length; i++) {
-            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a onclick="edit(' + data[i].categoryid + ')">Edit</a></td></tr>';
+            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
         }
 
         $("#list").html(tblhead+tblrow+tblfoot);
     });
 
     function edit(i) {
-        //window.location.href = "/Category/Edit/" + i;
-
+        
         $("li.active").removeClass('active');
         $("a[href='#list']").attr('aria-expanded', 'false');
         $("#list").removeClass('active');
@@ -124,13 +183,46 @@
         $("a[href='#edit']").attr('aria-expanded', 'true');
         $("#edit").addClass('active');
 
+        
+        $.get('/Category/listOfAllCategory', function (data) {
+            data = JSON.parse(data);
+
+            $(".categoryid").val(data[i].categoryid);
+
+            $(".categoryname").parent().removeClass().addClass("form-group label-floating");
+            $(".categoryname").val(data[i].categoryname);
+
+            $(".categorydescription").parent().removeClass().addClass("form-group label-floating");
+            $(".categorydescription").val(data[i].categorydescription);
+        });
+        
     }
 
-    function save() {
-        var j = { "categoryname": "Hemant", "categorydescription": "Prajapati" };
-        $.post('/Category/Create', j, function (data) {
+    function update() {
+        var j = { categoryid: $(".categoryid").val(), categoryname: $(".categoryname").val(), categorydescription: $(".categorydescription").val() };
+        $.post('/Category/Update', j, function (data) {
             console.log(data);
         });
+    }
+
+    function deletion(i) {
+        //window.location.href = "/Category/Edit/" + i;
+        $("li.active").removeClass('active');
+        $("a[href='#list']").attr('aria-expanded', 'false');
+        $("#list").removeClass('active');
+
+        $("a[href='#Delete']").parent().removeClass().addClass("active");
+        $("a[href='#Delete']").attr('aria-expanded', 'true');
+        $("#Delete").addClass('active');
+
+
+        $.get('/Category/listOfAllCategory', function (data) {
+            data = JSON.parse(data);
+            $("#Delete-categoryname").html('<h6>' + data[i].categoryname + '</h6>');
+            $("#Delete-Description").html('<h6>' + data[i].categorydescription + '</h6>');
+
+        });
+
     }
 
 </script>
