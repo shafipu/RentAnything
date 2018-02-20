@@ -18,23 +18,20 @@
     <div class="container" style="box-shadow:2px 2px 3px #E0E0E0">
         <div class="clearfix">
             <div class="wizard-container">
-
+                @Html.HiddenFor(model => model.userid, new { htmlAttributes = new { @class = "userid" } })
                 <div class="wizard-card ct-wizard-orange" id="wizardProperty">
-                    <form action="" method="">
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
                         <div class="wizard-header">
                             <h3>
-                                <b>Register Youself</b> <br>
-
-                            </h3>
+                                <b>Register Youself</b></h3>
                         </div>
-
                         <ul>
                             <li><a href="#step1" data-toggle="tab">Step 1 </a></li>
                             <li><a href="#step2" data-toggle="tab">Step 2 </a></li>
                         </ul>
-
                         <div class="tab-content">
-
                             <div class="tab-pane" id="step1">
                                 <div class="row ">
                                     <h4 class="info-text"> Let's start with the basic information</h4>
@@ -58,7 +55,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="phone_number">Contact Number</label>
-                                            <input class="form-control" maxlength="10" placeholder="number"  id="phone" >
+                                            <input class="form-control" maxlength="10" placeholder="number" id="phone">
                                         </div>
                                     </div>
 
@@ -184,7 +181,8 @@
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
-                    </form>
+                        </div>}
+                    
                 </div>
                 <!-- End submit form -->
             </div>
