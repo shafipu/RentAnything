@@ -335,6 +335,7 @@
     <Content Include="Content\User\assets\img\arrows-small.png" />
     <Content Include="Content\User\assets\img\arrows.png" />
     <Content Include="Content\User\assets\img\bg-footer.jpg" />
+    <Content Include="Content\User\assets\img\bhim.png" />
     <Content Include="Content\User\assets\img\blog1.jpg" />
     <Content Include="Content\User\assets\img\blog2.jpg" />
     <Content Include="Content\User\assets\img\chevron-down.png" />
@@ -381,6 +382,7 @@
     <Content Include="Content\User\assets\img\icon\shawer.png" />
     <Content Include="Content\User\assets\img\logo.png" />
     <Content Include="Content\User\assets\img\page-header.jpg" />
+    <Content Include="Content\User\assets\img\paytm.png" />
     <Content Include="Content\User\assets\img\preloader.gif" />
     <Content Include="Content\User\assets\img\pro-ads.jpg" />
     <Content Include="Content\User\assets\img\property-1\property1.jpg" />

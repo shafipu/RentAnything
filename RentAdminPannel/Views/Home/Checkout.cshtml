@@ -22,10 +22,16 @@
 
                 <div class="wizard-card ct-wizard-orange" id="wizardProperty">
                     <form action="">
+                        <div class="wizard-header">
+                            <h3>
+                                Checkout
+                                <br />
+                            </h3>
+                        </div>
                         <ul>
                             <li><a href="#step1" data-toggle="tab">Sign in </a></li>
-                            <li><a href="#step2" data-toggle="tab">Select Address </a></li>
-                            <li><a href="#step3" data-toggle="tab">Place an Order</a></li>
+                            <li><a href="#step2" data-toggle="tab">Shipping Address </a></li>
+                            <li><a href="#step3" data-toggle="tab">Order Summary</a></li>
                             <li><a href="#step4" data-toggle="tab">Complete Payment</a></li>
                         </ul>
 
@@ -35,6 +41,7 @@
 
                                 <div class="row p-b-15  ">
                                     <h4 class="info-text">Sign in with correct account. </h4>
+
                                     <div class="col-md-3"></div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
@@ -57,20 +64,30 @@
                             <div class="tab-pane" id="step2">
                                 <h4 class="info-text">Add delivery Address </h4>
                                 <div class="row">
+                                    <div class="col-sm-12 padding-top-15">
+                                        <div class="form-group">
+                                            &nbsp;  &nbsp;  &nbsp;
+                                            <!-- <input name="daily" type="text" class="form-control" placeholder="">-->
+                                            <input type="checkbox" id="yourBox" />
+                                            <label>Use My Address</label>
+
+
+                                        </div>
+                                    </div>
                                     <div class="col-sm-12">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Full Name</label>
                                                 <input type="text" name="fullname" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Mobile Number</label>
                                                 <input type="text" name="Mobile_number" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Pincode</label>
                                                 <input type="text" name="pincode" class="form-control">
@@ -78,19 +95,19 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Flat / House No. / Floor / Building: </label>
                                                 <input type="text" name="flat" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Colony / Street / Locality:</label>
                                                 <input type="text" name="colony" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="col-sm-3">
+                                        <div class="col-sm-4">
                                             <div class="form-group">
                                                 <label>Landmark: optional</label>
                                                 <input type="text" name="landmark" class="form-control" placeholder="e.g. near LPU ,Phagwara-Jalandhar road">
@@ -100,18 +117,36 @@
                                     <div class="col-sm-12 padding-top-15">
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label>Town/City: </label>
+                                                <label>State: </label>
                                                 <input type="text" name="colony" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-sm-4">
 
                                             <div class="form-group">
-                                                <label>State:</label>
+                                                <label>City/Town:</label>
+                                                <input type="text" name="colony" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+
+                                            <div class="form-group">
+                                                <label>Alternate Mobile no:</label>
                                                 <input type="text" name="colony" class="form-control">
                                             </div>
                                         </div>
 
+                                    </div>
+                                    <div class="col-sm-12 padding-top-15">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" value="home" name="a">   Delivery all time
+                                            </label>
+                                            &nbsp; &nbsp; &nbsp;
+                                            <label>
+                                                <input type="radio" value="office" name="a">   Delivery b/w 10am to 5pm
+                                            </label>
+                                        </div>
                                     </div>
                                     <br>
                                 </div>
@@ -119,54 +154,44 @@
                             <!-- End step 2 -->
 
                             <div class="tab-pane" id="step3">
-                                <h4 class="info-text">Choose Delivery Options </h4>
+                               
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="property-images">Chose Images :</label>
-                                            <input class="form-control" type="file" id="property-images">
-                                            <p class="help-block">Select multipel images for your property .</p>
+                                        <div class="col-sm-4 col-sm-offset-5">
+                                            <div class="picture-container">
+                                                <div class="picture">
+                                                    <img src="assets/img/default-property.jpg" class="picture-src" id="wizardPicturePreview" title="" />
+                                                    <input type="file" id="wizard-picture">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
-                                        <div class="form-group">
-                                            <label for="property-video">Property video :</label>
-                                            <input class="form-control" value="" placeholder="http://www.youtube.com, http://vimeo.com" name="property_video" type="text">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input class="form-control" value="" placeholder="http://www.youtube.com, http://vimeo.com" name="property_video" type="text">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <input class="form-control" value="" placeholder="http://www.youtube.com, http://vimeo.com" name="property_video" type="text">
-                                        </div>
-                                    </div>
+                                        <br />
+                                        <br />
+                                        <label>Product Name:</label>
+                                        <br />
+                                        <label>Quantity:</label>
+                                        <br />
+                                        <label>Rent Amount:</label>
+                                        <br />
+                                        <label>Expected Price:</label>
+                                       
                                 </div>
+                               </div>
                             </div>
                             <!--  End step 3 -->
 
 
                             <div class="tab-pane" id="step4">
-                                <h4 class="info-text"> Finished and submit </h4>
+                                <h4 class="info-text"> Choose Your Payment Option </h4>
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <div class="">
-                                            <p>
-                                                <label><strong>Terms and Conditions</strong></label>
-                                                By accessing or using  GARO ESTATE services, such as
-                                                posting your property advertisement with your personal
-                                                information on our website you agree to the
-                                                collection, use and disclosure of your personal information
-                                                in the legal proper manner
-                                            </p>
-
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" /> <strong>Accept termes and conditions.</strong>
-                                                </label>
-                                            </div>
-
+                                        <div class="col-sm-6"style="text-align:center;">
+                                          <img src="~/Content/User/assets/img/paytm.png" />
+                                        </div>
+                                        <div class="col-sm-6"style="text-align:center;">
+                                            <img src="~/Content/User/assets/img/bhim.png" />
                                         </div>
                                     </div>
                                 </div>
