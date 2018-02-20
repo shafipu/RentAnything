@@ -11,9 +11,11 @@ namespace RentAdminPannel
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tbl_product
     {
+        [Key]
         public long productid { get; set; }
         public string productcode { get; set; }
         public string productname { get; set; }
