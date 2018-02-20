@@ -89,7 +89,9 @@ namespace RentAdminPannel
                         "~/Content/User/assets/js/jquery.bootstrap.wizard.js",
                         "~/Content/User/assets/js/jquery.validate.min.js",
                         "~/Content/User/assets/js/wizard.js",
-                         "~/Content/User/assets/js/lightslider.min.js"
+                         "~/Content/User/assets/js/jquery.js",
+                          "~/Content/User/assets/js/state.js",
+                          "~/Content/User/assets/js/lightslider.min.js"
 
                        ));
             //User  srcipts Ends
