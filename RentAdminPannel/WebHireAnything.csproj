@@ -210,6 +210,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HireModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="HireModel.Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HireModel.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="HireModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -483,6 +488,7 @@
     <Content Include="HireModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>HireModel.edmx</DependentUpon>
+      <LastGenOutput>HireModel.Context1.cs</LastGenOutput>
     </Content>
     <Content Include="HireModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
