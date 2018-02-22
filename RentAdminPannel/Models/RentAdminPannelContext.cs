@@ -10,8 +10,7 @@ namespace RentAdminPannel.Models
     { 
         public System.Data.Entity.DbSet<tbl_category> tbl_category { get; set; }
         public System.Data.Entity.DbSet<tbl_usermaster> tbl_usermaster { get; set; }
-
-        //public System.Data.Entity.DbSet<tbl_subcategory> tbl_subcategory { get; set; }
+        public System.Data.Entity.DbSet<tbl_subcategory> tbl_subcategory { get; set; }
 
     }
 }

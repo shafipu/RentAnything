@@ -18,12 +18,17 @@ namespace RentAdminPannel
         // GET: Category
         public ActionResult Index()
         {
-            return View(db.tbl_category.ToList());
+            return View();
         }
         
         public string listOfAllCategory()
         {
             return (new JavaScriptSerializer().Serialize(db.tbl_category.ToList()));
+        }
+
+        public string listOfAllSubCategory()
+        {
+            return (new JavaScriptSerializer().Serialize(db.tbl_subcategory.ToList()));
         }
 
         // GET: Category/Details/5
