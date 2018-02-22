@@ -19,10 +19,9 @@ namespace RentAdminPannel.Controllers
         {
             return View();
         }
-        public ActionResult Register(int id = 0)
+        public ActionResult Register()
         {
-            tbl_usermaster usermodel = new tbl_usermaster();
-            return View(usermodel);
+            return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]

@@ -1,4 +1,4 @@
-﻿@model RentAdminPannel.tbl_usermaster
+﻿@model RentAdminPannel.Models.tbl_usermaster
 @{
     ViewBag.Title = "Register";
 }
@@ -46,16 +46,16 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="name">First Name</label>
-                                            <input type="text" class="form-control" id="firstname" class="form-control" placeholder="First Name...">
+                                            <input type="text" class="form-control" id="firstname"  name="firstname" class="form-control" placeholder="First Name...">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">Last Name</label>
-                                            <input type="text" class="form-control" id="lastname" class="form-control" placeholder="Last Name...">
+                                            <input type="text" class="form-control" id="lastname" name="lastname" class="form-control" placeholder="Last Name...">
                                         </div>
                                         <div class="form-group">
                                             <label for="phone_number">Contact Number</label>
-                                            <input class="form-control" maxlength="10" placeholder="number" id="phone">
+                                            <input class="form-control" maxlength="10" placeholder="number" id="phone" name="phone">
                                         </div>
                                     </div>
 
@@ -69,14 +69,14 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Email:</label>
-                                                <input type="text" class="form-control" id="email" class="form-control" placeholder="Email here...">
+                                                <input type="text" class="form-control" id="email" name="email" class="form-control" placeholder="Email here...">
                                             </div>
                                         </div>
 
                                         <div class="col-md-3">
                                             <div class="form-group">
                                                 <label>Password:</label>
-                                                <input type="password" class="form-control" id="password" class="form-control" placeholder="Password...">
+                                                <input type="password" class="form-control" id="password" name="password" class="form-control" placeholder="Password...">
 
                                             </div>
                                         </div>
@@ -92,7 +92,7 @@
                                     <div class="col-sm-12 padding-top-15">
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label class="gender" id="gender">Gender:</label>&nbsp;
+                                                <label class="gender" id="gender" name="gender">Gender:</label>&nbsp;
                                                 <div class="form-group">
                                                     <input type="radio" class="form-control" name="gender" value="male" checked> Male
                                                     <input type="radio" class="form-control" name="gender" value="female">Female
@@ -103,7 +103,7 @@
                                         </div>
                                         <div class="col-sm-6">
                                             <div class="form-group">
-                                                <label for="dob" id="dob">Date of Birth</label>
+                                                <label for="dob" id="dob" name="dob">Date of Birth</label>
                                                 <input class="form-control" type="date" required>
                                             </div>
                                         </div>
@@ -112,7 +112,7 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>State :</label>
-                                                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                <select id="lunchBegins state" name="state" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                     <option>Seoul</option>
                                                     <option>Paris</option>
                                                     <option>Casablanca</option>
@@ -125,7 +125,7 @@
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>City :</label>
-                                                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                                <select id="lunchBegins city" name="city" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                     <option>New york, CA</option>
                                                     <option>Paris</option>
                                                     <option>Casablanca</option>
@@ -137,8 +137,8 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="form-group">
-                                                <label for="zip">Zip Code</label>
-                                                <input class="form-control" type="text" required>
+                                                <label for="zip" >Zip Code</label>
+                                                <input class="form-control" type="text" id="zipcode" name="zipcode" required>
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
@@ -150,7 +150,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Security Question:</label>
-                                                <select id="securityquestion" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Question">
+                                                <select id="securityquestion fk_questionid" name="fk_questionid" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select Question">
                                                     <option>What is your Facebook name ?</option>
                                                     <option>What is your Pet Name</option>
                                                     <option>Who is your favourite teacher ?</option>
@@ -161,7 +161,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label>Answer:</label>
-                                                <input type="text" class="form-control" id="answer" class="form-control" placeholder="Answer...">
+                                                <input type="text" class="form-control" id="answer" name="answer" class="form-control" placeholder="Answer...">
                                             </div>
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@
                             <div class="wizard-footer">
                                 <div class="pull-right">
                                     <input type='button' class='btn btn-next btn-primary' name='next' value='Next' />
-                                    <input type='button' class='btn btn-finish btn-primary ' name='finish' value='Submit' />
+                                    <input type='submit' class='btn btn-finish btn-primary ' name='finish' value='Submit' />
                                 </div>
 
                                 <div class="pull-left">
