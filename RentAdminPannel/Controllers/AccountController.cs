@@ -25,10 +25,12 @@ namespace RentAdminPannel.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-       public ActionResult Register([Bind(Include = "email,password,firstname,lastname,gender,dob,address,country,state,city,zipcode,phone")] tbl_usermaster tbl_usermaster)
+       public ActionResult Register([Bind(Include = "email,password,firstname,lastname,gender,dob,address,country,state,city,zipcode,phone,entrydate,isActive,fk_rollid,fk_questionid,answer")] tbl_usermaster tbl_usermaster)
         {
             if (ModelState.IsValid)
             {
+                tbl_usermaster.fk_rollid = 1;
+                tbl_usermaster.fk_questionid= 1;
                 tbl_usermaster.entrydate = DateTime.Now;
                 tbl_usermaster.isActive = 1;
                 db.tbl_usermaster.Add(tbl_usermaster);
