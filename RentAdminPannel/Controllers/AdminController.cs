@@ -9,6 +9,7 @@ namespace RentAdminPannel.Controllers
 {
     public class AdminController : Controller
     {
+        private RentAdminPannelContext db = new RentAdminPannelContext();
         // GET: Admin
         public ActionResult Index()
         {
@@ -17,13 +18,33 @@ namespace RentAdminPannel.Controllers
 
         public new ActionResult Profile()
         {
-            tbl_usermaster admin = new tbl_usermaster();
-            
+            return View();
+        }
+ 
+         [HttpPost]
+        [ValidateAntiForgeryToken]
+        public new ActionResult Profile([Bind(Include = "email,password,firstname,lastname,gender,dob,address,country,state,city,zipcode,phone,fk_rollid,fk_questionid,answer,entrydate,isActive")] tbl_usermaster tbl_Usermaster)
+        {
+            if (ModelState.IsValid)
+            {
+                tbl_Usermaster.fk_rollid = 6;
+                tbl_Usermaster.fk_questionid = 3;
+                tbl_Usermaster.entrydate = DateTime.Now;
+                tbl_Usermaster.isActive = 1;
+                db.tbl_usermaster.Add(tbl_Usermaster);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
 
-
-            return View(admin);
+            return View(tbl_Usermaster);
         }
 
-        
+           
+        }
+
+
+
     }
-}
+
+
+
