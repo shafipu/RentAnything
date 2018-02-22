@@ -18,10 +18,10 @@
     <div class="container" style="box-shadow:2px 2px 3px #E0E0E0">
         <div class="clearfix">
             <div class="wizard-container">
-                @Html.HiddenFor(model => model.userid, new { htmlAttributes = new { @class = "userid" } })
+               
                 <div class="wizard-card ct-wizard-orange" id="wizardProperty">
-@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "myform", id = "myform" }))
-                    {
+@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "myform1", id = "myform1",onsubmit = "return check()" }))
+{
                         @Html.AntiForgeryToken()
                         <div class="wizard-header">
                             <h3>
@@ -190,7 +190,20 @@
     </div>
 </div>
 
+<script>
+                document.write(new Date().getFullYear());
+                function check()
+                {
+                    var sp = document.myform1.password.value;
+                    var fp = document.myform1.c_password.value;
+                    if (fp == sp) { return true; }
+                    else {
+                        alert("password must be same");
+                        return false;
+                    }
+                }
 
+</script>
 
 
 
