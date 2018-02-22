@@ -18,6 +18,20 @@ namespace RentAdminPannel.Models
         public Nullable<System.DateTime> entrydate { get; set; }
         public Nullable<byte> isactive { get; set; }
     }
+    [Table("tbl_subcategory")]
+    public class tbl_subcategory
+    {
+        [Key]
+        public long subcategoryid { get; set; }
+        public string subcategoryname { get; set; }
+        public string subcategorydescription { get; set; }
+        public string entryby { get; set; }
+        public Nullable<System.DateTime> entrydate { get; set; }
+        public Nullable<byte> isActive { get; set; }
+        public Nullable<long> fk_categoryid { get; set; }
+    }
+
+    
 
     [Table("tbl_usermaster")]
     public class tbl_usermaster
