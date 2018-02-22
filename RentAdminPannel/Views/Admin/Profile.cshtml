@@ -1,4 +1,4 @@
-﻿
+﻿@model RentAdminPannel.Models.tbl_usermaster
 @{
     ViewBag.Title = "Profile";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
@@ -6,210 +6,223 @@
 
 
 
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-8">
-                        <div class="card">
-                            <div class="card-header" data-background-color="purple">
-                                <h4 class="title">Edit Profile</h4>
-                                <p class="category">Complete your profile</p>
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header" data-background-color="purple">
+                        <h4 class="title">Edit Profile</h4>
+                        <p class="category">Complete your profile</p>
+                    </div>
+                    <div class="card-content">
+                        @using (Html.BeginForm(null, null, FormMethod.Post, new { name = "myform", id = "myform",onsubmit="return check()"}))
+                        {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group label-floating">
+                                <label class="control-label">First Name</label>
+                                <input required text="text" class="form-control" id="firstname" name="firstname">
                             </div>
-                            <div class="card-content">
-                                <form>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">First Name</label>
-                                                <input required text="text" class="form-control" id="firstname" name="fn">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Last Name</label>
-                                                <input required type="text" class="form-control" id="lastname" name="ln">
-                                            </div>
-                                        </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Last Name</label>
+                                <input required type="text" class="form-control" id="lastname" name="lastname">
+                            </div>
+                        </div>
 
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group label-floating">
-                                            <label class="control-label">Email Address</label>
-                                            <input required type="email" class="form-control"id="email" name="eml">
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Email Address</label>
+                            <input required type="email" class="form-control" id="email" name="email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                         
+                            <div class="form-group ">
+                                <label>Gender </label>
+                                <div class="radio">
 
-                                            <div class="form-group ">
-                                              
-                                                <div class="radio">
-                                                    <label>Gender </label>
-                                                    <label>
-                                                        <input type="radio" value="male" name="gender"> male
-                                                    </label>
-                                                    <label> <input type="radio" value="female" name="gender"> female</label>
-                                                </div>  
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Date Of Birth</label>
-                                                <input required type="text" class="form-control" id="dob" name="doob">
-                                            </div>
-                                        </div>
+                                    <label>
+                                        <input type="radio" value="male" id="gender" name="gender"> male
+                                    </label>
+                                    <label> <input type="radio" value="female" id="gender" name="gender"> female</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Date Of Birth</label>
+                                <input required type="date" class="form-control" id="dob" name="dob">
+                            </div>
+                        </div>
 
-                                    </div>
+                    </div>
 
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Address</label>
-                                                <input required text="text" class="form-control" id="address" name="ad">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Country</label>
-                                                <input required type="text" class="form-control" id="country" name="ctry">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">State</label>
-                                                <input required type="text" class="form-control" id="state" name="st">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">city</label>
-                                                <input required type="text" class="form-control" id="city" name="cty">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Postal Code</label>
-                                                <input required type="text" class="form-control" id="zipcode" name="pc">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="form-group label-floating">
-                                                <label class="control-label">Mobile No.</label>
-                                                <input required type="text" class="form-control" id ="phone"name="mn">
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="form-group">
-                                                <label>Want to change Password??</label>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-
-                                          
-                                            <div class="col-md-4">
-
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Old Password</label>
-                                                    <input type="password" class="form-control" disabled>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">New Password</label>
-                                                    <input type="password" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <div class="form-group label-floating">
-                                                    <label class="control-label">Confirm Password</label>
-                                                    <input  type="password" class="form-control">
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label>About Me</label>
-                                                    <div class="form-group label-floating">
-                                                        <label class="control-label">Designation.</label>
-                                                        <textarea class="form-control" rows="5"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
-                                        <div class="clearfix"></div>
-                                </form>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Address</label>
+                                <input required text="text" class="form-control" id="address" name="address">
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card card-profile">
-                            <div class="card-avatar">
-                                <a href="#pablo">
-                                    <img class="img" src="~/Content/Admin/assets/img/faces/marc.jpg" />
-                                </a>
-                            </div>
-                            <div class="content">
-                                <h6 class="category text-gray">CEO / Co-Founder</h6>
-                                <h4 class="card-title">Alec Thompson</h4>
-                                <p class="card-content">
-                                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                                </p>
-                                <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Country</label>
+                                <input required type="text" class="form-control" id="country" name="country">
                             </div>
                         </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">State</label>
+                                <input required type="text" class="form-control" id="state" name="state">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">city</label>
+                                <input required type="text" class="form-control" id="city" name="city">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Postal Code</label>
+                                <input required type="text" class="form-control" id="zipcode" name="zipcode">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Mobile No.</label>
+                                <input required type="text" class="form-control" id="phone" name="phone">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Want to change Password??</label>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="row">
+
+
+                        <div class="col-md-4">
+
+                            <div class="form-group label-floating">
+                                <label class="control-label">Old Password</label>
+                                <input type="password" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">New Password</label>
+                                <input type="password" name="pass" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group label-floating">
+                                <label class="control-label">Confirm Password</label>
+                                <input type="password" id="password" name="password" class="form-control">
+                            </div>
+                        </div>
+
+                    </div>
+                        
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>About Me</label>
+                                <div class="form-group label-floating">
+                                    <label class="control-label">Designation.</label>
+                                    <textarea class="form-control" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Update Profile</button>
+                    <div class="clearfix"></div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-profile">
+                    <div class="card-avatar">
+                        <a href="#pablo">
+                            <img class="img" src="~/Content/Admin/assets/img/faces/marc.jpg" />
+                        </a>
+                    </div>
+                    <div class="content">
+                        <h6 class="category text-gray">CEO / Co-Founder</h6>
+                        <h4 class="card-title">Alec Thompson</h4>
+                        <p class="card-content">
+                            Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                        </p>
+                        <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
                     </div>
                 </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container-fluid">
-                <nav class="pull-left">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Company
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Portfolio
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                Blog
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <p class="copyright pull-right">
-                    &copy;
-                    <script>
-                        document.write(new Date().getFullYear());
-                       
-                    </script>
-                    <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
-                </p>
-            </div>
-        </footer>
- 
+    </div>
+</div>
+<footer class="footer">
+    <div class="container-fluid">
+        <nav class="pull-left">
+            <ul>
+                <li>
+                    <a href="#">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Company
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Portfolio
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        Blog
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <p class="copyright pull-right">
+            &copy;
+            <script>
+                document.write(new Date().getFullYear());
+                function check()
+                {
+                    var sp = document.myform.password.value;
+                    var fp = document.myform.pass.value;
+                    if (fp == sp) { return true; }
+                    else {
+                        alert("password must be same");
+                        return false;
+                    }
+                }
+
+            </script>
+            <a href="http://www.creative-tim.com">Creative Tim</a>, made with love for a better web
+        </p>
+    </div>
+</footer>
+
 
