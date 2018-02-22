@@ -195,7 +195,7 @@
             <div class="card-content">
                 <div class="tab-content">
 
-                    <div class="tab-pane active" id="list">
+                    <div class="tab-pane active" id="list1">
 
                     </div>
                     <div class="tab-pane" id="new">
@@ -311,10 +311,22 @@
         var tblfoot='</table>'
         var tblhead = '<table class="table"><tr><th>Category name</th><th>Category description</th><th>Enrty By<th></th></th></tr>'
         for (i = 0; i < data.length; i++) {
-            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
+            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
         }
 
         $("#list").html(tblhead+tblrow+tblfoot);
+    });
+
+    $.get('/Category/listOfAllCategory', function (data) {
+        data = JSON.parse(data);
+        var tblrow = '';
+        var tblfoot = '</table>'
+        var tblhead = '<table class="table"><tr><th>Category name</th><th>Category description</th><th>Enrty By<th></th></th></tr>'
+        for (i = 0; i < data.length; i++) {
+            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
+        }
+
+        $("#list1").html(tblhead + tblrow + tblfoot);
     });
 
     function edit(i) {
