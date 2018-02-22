@@ -20,7 +20,7 @@
             <div class="wizard-container">
                 @Html.HiddenFor(model => model.userid, new { htmlAttributes = new { @class = "userid" } })
                 <div class="wizard-card ct-wizard-orange" id="wizardProperty">
-                    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+@using (Html.BeginForm(null, null, FormMethod.Post, new { name = "myform", id = "myform" }))
                     {
                         @Html.AntiForgeryToken()
                         <div class="wizard-header">

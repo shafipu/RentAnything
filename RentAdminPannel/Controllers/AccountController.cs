@@ -35,10 +35,10 @@ namespace RentAdminPannel.Controllers
                 tbl_usermaster.isActive = 1;
                 db.tbl_usermaster.Add(tbl_usermaster);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Home","Index");
             }
 
-            return View("Index");
+            return View(tbl_usermaster);
         }
     }
 }
