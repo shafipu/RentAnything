@@ -19,13 +19,14 @@ namespace RentAdminPannel.Controllers
         {
             return View();
         }
-        public ActionResult Register()
+        public ActionResult Register(int id = 0)
         {
-            return View();
+            tbl_usermaster usermodel = new tbl_usermaster();
+            return View(usermodel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register([Bind(Include = "email,password,firstname,lastname,gender,dob,address,country,state,city,zipcode,phone")] tbl_usermaster tbl_usermaster)
+       public ActionResult Register([Bind(Include = "email,password,firstname,lastname,gender,dob,address,country,state,city,zipcode,phone")] tbl_usermaster tbl_usermaster)
         {
             if (ModelState.IsValid)
             {
@@ -36,7 +37,7 @@ namespace RentAdminPannel.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View(tbl_usermaster);
+            return View("Index");
         }
     }
 }

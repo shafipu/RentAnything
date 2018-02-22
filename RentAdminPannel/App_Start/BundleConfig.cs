@@ -27,7 +27,7 @@ namespace RentAdminPannel
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            //Admin Dashboard srcipts Starts
+            //Admin Dashboard srcipts Starts here- MUHAMMED SHAFI PU
             //--------------------------------------------------------------------
             bundles.Add(new ScriptBundle("~/bundles/Admin_js").Include(
                       "~/Content/Admin/assets/js/jquery-3.2.1.min.js",
@@ -42,7 +42,7 @@ namespace RentAdminPannel
             //Admin Dashboard srcipts Ends
             //--------------------------------------------------------------------
 
-            //Admin Dashboard Styles Starts
+            //Admin Dashboard Styles Starts here- MUHAMMED SHAFI PU
             //--------------------------------------------------------------------
             bundles.Add(new StyleBundle("~/Content/Admin_css").Include(
                       "~/Content/Admin/assets/css/bootstrap.min.css",
@@ -89,7 +89,9 @@ namespace RentAdminPannel
                         "~/Content/User/assets/js/jquery.bootstrap.wizard.js",
                         "~/Content/User/assets/js/jquery.validate.min.js",
                         "~/Content/User/assets/js/wizard.js",
-                         "~/Content/User/assets/js/lightslider.min.js"
+                         "~/Content/User/assets/js/jquery.js",
+                          "~/Content/User/assets/js/state.js",
+                          "~/Content/User/assets/js/lightslider.min.js"
 
                        ));
             //User  srcipts Ends

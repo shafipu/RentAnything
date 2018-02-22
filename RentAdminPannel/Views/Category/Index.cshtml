@@ -1,4 +1,4 @@
-﻿@model IEnumerable<RentAdminPannel.tbl_category>
+﻿@model IEnumerable < RentAdminPannel.Models.tbl_category>
 
 @{
     ViewBag.Title = "Index";
@@ -13,7 +13,7 @@
             <div class="card-header" data-background-color="purple">
                 <div class="nav-tabs-navigation">
                     <div class="nav-tabs-wrapper">
-                        <span class="nav-tabs-title">Category : </span>
+                        <span class="nav-tabs-title"></span>
                         <ul class="nav nav-tabs" data-tabs="tabs">
                             <li class="active">
                                 <a href="#list" data-toggle="tab">
@@ -153,6 +153,154 @@
             </div>
         </div>
     </div>
+
+
+
+    <div class="col-lg-6 col-md-12">
+        <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="orange">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <span class="nav-tabs-title"></span>
+                        <ul class="nav nav-tabs" data-tabs="tabs">
+                            <li class="active">
+                                <a href="#list1" data-toggle="tab">
+                                    <i class="material-icons">list</i> Sub-category List
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#new1" data-toggle="tab">
+                                    <i class="material-icons">open_in_new</i> Create Sub-category
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a href="#edit1" data-toggle="tab">
+                                    <i class="material-icons">build</i> Edit Sub-category
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                            <li class="">
+                                <a href="#Delete1" data-toggle="tab">
+                                    <i class="material-icons">delete</i> Delete Sub-category
+                                    <div class="ripple-container"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="tab-content">
+
+                    <div class="tab-pane active" id="list1">
+
+                    </div>
+                    <div class="tab-pane" id="new">
+                        <div class="col-md-12 container-fluid">
+
+                            <div class="card-content">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Category Name</label>
+                                                <input type="text" id="categoryname" required name="categoryname" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Category Description</label>
+                                                <input type="text" id="categorydescription" required name="categorydescription" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" id="btnPost" class="btn btn-primary pull-right">Create</button>
+                                        <div class="clearfix"></div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="edit">
+                        <div class="col-md-12 container-fluid">
+
+                            <div class="card-content">
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <input type="hidden" id="categoryid" value="" class="categoryid" />
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Category Name</label>
+                                                <input type="text" id="categoryname" required name="categoryname" class="form-control categoryname">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Category Description</label>
+                                                <input type="text" id="categorydescription" required name="categorydescription" class="form-control categorydescription">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary pull-right" id="btnEdit">Update</button>
+                                        <div class="clearfix"></div>
+                                }
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="Delete">
+
+                        <div>
+
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    <h6 style="font-weight:bold">Name :</h6>
+                                </dt>
+
+                                <dd>
+                                    <div id="Delete-categoryname"></div>
+
+                                </dd>
+
+                                <dt>
+                                    <h6 style="font-weight:bold">Description :</h6>
+                                </dt>
+
+                                <dd>
+                                    <div id="Delete-Description"></div>
+                                </dd>
+                            </dl>
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" required id="categoryid" class="categoryid-delete" />
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Delete" id="btnDelete" class="btn btn-primary" />
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
@@ -163,10 +311,22 @@
         var tblfoot='</table>'
         var tblhead = '<table class="table"><tr><th>Category name</th><th>Category description</th><th>Enrty By<th></th></th></tr>'
         for (i = 0; i < data.length; i++) {
-            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
+            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
         }
 
         $("#list").html(tblhead+tblrow+tblfoot);
+    });
+
+    $.get('/Category/listOfAllCategory', function (data) {
+        data = JSON.parse(data);
+        var tblrow = '';
+        var tblfoot = '</table>'
+        var tblhead = '<table class="table"><tr><th>Category name</th><th>Category description</th><th>Enrty By<th></th></th></tr>'
+        for (i = 0; i < data.length; i++) {
+            tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
+        }
+
+        $("#list1").html(tblhead + tblrow + tblfoot);
     });
 
     function edit(i) {
@@ -238,18 +398,27 @@
     $(function () {
         $("#btnEdit").click(function () {
             var category = new Object();
-            category.categoryid = $('.categoryid').val();
-            category.categoryname = $('.categoryname').val();
-            category.categorydescription = $('.categorydescription').val();
+            category.categoryid = $('.categoryid').val().trim();
+            category.categoryname = $('.categoryname').val().trim();
+            category.categorydescription = $('.categorydescription').val().trim();
             if (category != null) {
                 $.ajax({
                     type: "POST",
                     url: "/Category/editCategoryAjax",
                     data: JSON.stringify(category),
                     contentType: "application/json; charset=utf-8",
-                    dataType: "json"
+                    dataType: "json",
+                    success: function (response) {
+                        if (category.categoryid=0) {
+                            
+                        }
+                        else {
+                            alert("Category Updated succesfully");
+                        }
+                        
+                    }
                 });
-                alert("Category Updated succesfully");
+                
             }
         });
     });

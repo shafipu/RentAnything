@@ -107,29 +107,38 @@
                                     <div class="col-sm-12 padding-top-15">
                                         <div class="col-sm-3">
                                             <div class="form-group">
-                                                <label>Available State :</label>
-                                                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
-                                                    <option>Seoul</option>
+                                               <label>Available State :</label>
+                                               <!-- <select id="lunchBegins" class="selectpicker" data-live-search="true" 
+                                                        data-live-search-style="begins" 
+                                                        title="Select your city">
+                                                  <option>Seoul</option>
                                                     <option>Paris</option>
                                                     <option>Casablanca</option>
                                                     <option>Tokyo</option>
-                                                    s
                                                     <option>Masrraekch</option>
                                                     <option>kyoto , shibua</option>
-                                                </select>
+                                                </select>-->
+                                                <select id="listBox" onchange='selct_district(this.value)' class="selectpicker" data-live-search="true" 
+                                                        data-live-search-style="begins" 
+                                                        title="Select your city"></select>
+                                                
                                             </div>
                                         </div>
                                         <div class="col-sm-3">
                                             <div class="form-group">
                                                 <label>Available City :</label>
-                                                <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
+                                               <!-- <select id="lunchBegins" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city">
                                                     <option>New york, CA</option>
                                                     <option>Paris</option>
                                                     <option>Casablanca</option>
                                                     <option>Tokyo</option>
                                                     <option>Marraekch</option>
                                                     <option>kyoto , shibua</option>
-                                                </select>
+                                                </select>-->
+                                              
+            <select id="secondlist" class="selectpicker" data-live-search="true" data-live-search-style="begins" title="Select your city"></select>
+                                                <!--<select id='secondlist's></select>-->
+
                                             </div>
                                         </div>
                                         <div class="col-sm-3">

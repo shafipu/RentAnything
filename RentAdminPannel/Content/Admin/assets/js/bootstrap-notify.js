@@ -92,7 +92,7 @@
 
             if (isSameTitle && isSameMsg && isSameType) {
                 //we found the dupe. Set the var and stop checking.
-                isDupe = true;
+                isDupe = false;
             }
             return !isDupe;
         });
@@ -104,7 +104,7 @@
         // Setup Content of Notify
         var contentObj = {
             content: {
-                message: typeof content === 'object' ? content.message : content,
+                message: content.message ? content.message:'',
                 title: content.title ? content.title : '',
                 icon: content.icon ? content.icon : '',
                 url: content.url ? content.url : '#',
