@@ -89,16 +89,25 @@ namespace RentAdminPannel
         {
             tbl_category category = new tbl_category
             {
-                categoryid=cat.categoryid,
+                categoryid = cat.categoryid,
                 categoryname = cat.categoryname,
                 categorydescription = cat.categorydescription,
                 entryby = "shafi",
                 entrydate = DateTime.Now,
                 isactive = 1
             };
-            db.Entry(category).State = EntityState.Modified;
-            db.SaveChanges();
+            try
+            {
+                db.Entry(category).State = EntityState.Modified;
+                db.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                return Json(category, JsonRequestBehavior.AllowGet);
+            }
             return Json(category, JsonRequestBehavior.AllowGet);
+
+
         }
         
 

@@ -27,7 +27,7 @@ namespace RentAdminPannel
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
 
-            //Admin Dashboard srcipts Starts
+            //Admin Dashboard srcipts Starts here- MUHAMMED SHAFI PU
             //--------------------------------------------------------------------
             bundles.Add(new ScriptBundle("~/bundles/Admin_js").Include(
                       "~/Content/Admin/assets/js/jquery-3.2.1.min.js",
@@ -42,7 +42,7 @@ namespace RentAdminPannel
             //Admin Dashboard srcipts Ends
             //--------------------------------------------------------------------
 
-            //Admin Dashboard Styles Starts
+            //Admin Dashboard Styles Starts here- MUHAMMED SHAFI PU
             //--------------------------------------------------------------------
             bundles.Add(new StyleBundle("~/Content/Admin_css").Include(
                       "~/Content/Admin/assets/css/bootstrap.min.css",
