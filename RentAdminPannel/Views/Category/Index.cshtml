@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Category Management</h2>
+<h3>Category Management</h3>
 
 <div class="row">
     <div class="col-lg-12 col-md-12">
@@ -305,6 +305,16 @@
 
 <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 <script type="text/javascript">
+    //-------------------main menu selection-------------------------------
+    $("a[href='/Category']").parent().removeClass().addClass("active");
+    $("a[href='/Admin']").parent().removeClass();
+    //-------------------main menu selection end---------------------------
+
+    //----method of list of all category for bindig with sub category -----
+    var bbb = "";
+   
+    //---------------------------------------------------------------------
+
     $.get('/Category/listOfAllCategory', function (data) {
         data = JSON.parse(data);
         var tblrow = '';
@@ -313,17 +323,18 @@
         for (i = 0; i < data.length; i++) {
             tblrow += '<tr><td>' + data[i].categoryname + '</td><td>' + data[i].categorydescription + '</td><td>' + data[i].entryby + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
         }
-
         $("#list").html(tblhead+tblrow+tblfoot);
     });
 
-    $.get('/Category/listOfAllSubCategory', function (data) {
-        data = JSON.parse(data);
+    $.get('/Category/listOfAllSubCategory', function (data1) {
+        data1 = JSON.parse(data1);
+        
         var tblrow = '';
         var tblfoot = '</table>'
-        var tblhead = '<table class="table"><tr><th>Sub-Category name</th><th>Sub-Category Description</th><th>Enrty By<th></th></th></tr>'
-        for (i = 0; i < data.length; i++) {
-            tblrow += '<tr><td>' + data[i].subcategoryname + '</td><td>' + data[i].subcategorydescription + '</td><td>' + data[i].entryby + '</td><td><a class="pointer" onclick="edit(' + i + ')">Edit</a> | <a class="pointer" onclick="deletion(' + i + ')">Delete</a></td></tr>';
+        var tblhead = '<table class="table"><tr><th>Sub-Category name</th><th>Category name</th><th>Sub-Category Description</th><th>Enrty By<th></th></th></tr>'
+        for (i = 0; i < data1.length; i++) {
+            
+            tblrow += '<tr><td>' + data1[i].subcategoryname + '</td><td>' + catname(data1[i].fk_categoryid.toString()).toString() + '</td><td>' + data1[i].subcategorydescription + '</td><td>' + data1[i].entryby + '</td><td><a class="pointer" onclick="editSub(' + i + ')">Edit</a> | <a class="pointer" onclick="deletionSub(' + i + ')">Delete</a></td></tr>';
         }
 
         $("#list1").html(tblhead + tblrow + tblfoot);
@@ -335,6 +346,7 @@
         $("a[href='#list']").attr('aria-expanded', 'false');
         $("#list").removeClass('active');
 
+        $("a[href='/Category']").parent().removeClass().addClass("active");
         $("a[href='#edit']").parent().removeClass().addClass("active");
         $("a[href='#edit']").attr('aria-expanded', 'true');
         $("#edit").addClass('active');
@@ -360,6 +372,7 @@
         $("a[href='#list']").attr('aria-expanded', 'false');
         $("#list").removeClass('active');
 
+        $("a[href='/Category']").parent().removeClass().addClass("active");
         $("a[href='#Delete']").parent().removeClass().addClass("active");
         $("a[href='#Delete']").attr('aria-expanded', 'true');
         $("#Delete").addClass('active');

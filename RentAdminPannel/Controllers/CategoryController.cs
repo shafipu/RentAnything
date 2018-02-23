@@ -23,6 +23,7 @@ namespace RentAdminPannel
         
         public string listOfAllCategory()
         {
+
             return (new JavaScriptSerializer().Serialize(db.tbl_category.ToList()));
         }
 
