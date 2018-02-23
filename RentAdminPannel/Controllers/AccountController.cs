@@ -19,50 +19,30 @@ namespace RentAdminPannel.Controllers
         {
             return View();
         }
-        public ActionResult Register(int id = 0)
+        public ActionResult Register()
         {
-            tbl_usermaster usermodel = new tbl_usermaster();
-            return View(usermodel);
+            return View();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
-       public ActionResult Register([Bind(Include = "email,password,firstname,lastname,gender,dob,address,country,state,city,zipcode,phone")] tbl_usermaster tbl_usermaster)
-        {
-            if (ModelState.IsValid)
-            {
-                tbl_usermaster.entrydate = DateTime.Now;
-                tbl_usermaster.isActive = 1;
-                db.tbl_usermaster.Add(tbl_usermaster);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View("Index");
-        }
+         [ValidateAntiForgeryToken]
+        public ActionResult Register([Bind(Include = "email,password,firstname,lastname,gender,dob,address,country,state,city,zipcode,phone,entrydate,isActive,fk_rollid,fk_questionid,answer")] tbl_usermaster tbl_usermaster)
+         {
+             if (ModelState.IsValid)
+             {
+                 tbl_usermaster.fk_rollid = 1;
+                 tbl_usermaster.fk_questionid= 1;
+                 tbl_usermaster.entrydate = DateTime.Now;
+                 tbl_usermaster.isActive = 1;
+                 db.tbl_usermaster.Add(tbl_usermaster);
+                 db.SaveChanges();
+                 return RedirectToAction("Index","Home");
+             }
+             return View(tbl_usermaster);
+         }
+        
     }
 }
-        //Get 
-        /*[HttpGet]
-       public ActionResult Register(int id=0)
-       {
-            tbl_usermaster usermodel = new tbl_usermaster();
-            return View(usermodel);
-        }
-        //POST 
-        [HttpPost]
-        public ActionResult Register(tbl_usermaster usermodel)
-        {
-            using (HireModel dbModel = new HireModel())
-            {
-                dbModel.tbl_usermaster.Add(usermodel);
-                dbModel.SaveChanges();
-            }
-            ModelState.Clear();
-            ViewBag.SuccessMessage = "Registration Done!";
-            return View("AddorEdit", new tbl_usermaster());
-        }
-    }   
-}
+       
 //controller testing
 /*[Authorize]
 public class AccountController : Controller
